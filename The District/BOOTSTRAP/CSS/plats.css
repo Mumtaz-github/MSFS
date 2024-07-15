@@ -1,0 +1,231 @@
+ 
+/* nabar color,height for all pages except accueil */
+.navbar {                
+  background-color: #ff8c00; 
+  height: 120px;
+ /* border-width: 8%;
+ border-style: inherit; */
+}
+
+
+
+
+ /* search area on video  */
+  .ongletrecherche{                            
+  position: absolute;
+  top: 32%;
+  left: 44%;
+  border-radius: 50px;
+  transform:translate(-20%, -50%);
+  z-index: 1;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  } 
+
+
+
+
+
+  
+
+  /* for navbar text like accueil,categorie,plats and contact*/
+  .nav-link{
+    color: white;
+    font-size: 32px;
+    font-weight:500 ;
+   position: relative;
+   font-weight: bolder;
+  }
+ 
+
+     /* .parallax {
+      /* The image used */
+     /* background-image: url("../IMG/photo.avif");
+    
+      /* Full height */
+    /*  height:1157px; 
+    
+      /* Create the parallax scrolling effect */
+     /* background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    } */
+
+
+   /* accueil, categorie, plats,*/
+ .topnav-centered{
+  float: none;
+  position: absolute;
+  top: 19%;
+  left: 27%;
+  
+}
+
+video {
+    object-fit: fill;
+  } 
+
+/*   
+.parallax {
+  /* The image used */
+  /* background-image: url("../IMG/photo.avif"); */
+
+  /* Full height */
+  /*height:1772px;*/
+  /* height:1860px; */
+
+  /* Create the parallax scrolling effect */
+  /* background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */ */
+
+
+
+
+
+    /*this transition applied on page the categorie'imags*/
+    .cards{
+      transition: .5s ease;
+    }
+    .cards:hover{
+      transform: scale(1.1);
+    }
+    .n-hover{
+      transition: none;
+      transform: none;
+    }
+    
+    .n-hover:hover{
+      transform: none;
+    }
+    
+     
+ /*  card formating 8 pages of plats-*/
+   .card{             
+    border: 10px;
+    background-color:#ff8c00;;
+    border-radius: 30px;
+    margin: 10px;} 
+    /*width: 100%;*/
+
+    
+    
+
+/*c pour cards de tous les plats comme asiatique,burger,pasta etc*/
+   .card-img-top{
+    border-radius: 30px;
+    height: 230px;
+    padding: 2px;
+   }  
+
+  
+
+
+/*tous les pages sauf accueil*/
+  body {
+     background-image: url("../IMG/phot.avif");
+   }
+
+
+
+   h1{
+    color:white;
+    font-size: 32px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  } 
+
+  /*tous les pages pour plats*/
+  h4{
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+
+
+  h6{
+    font-size: 15px;
+    font-weight: bolder;
+    }
+
+       /* for page the categorie,touslesplats carousel title*/
+   /* .card-title{
+    color: white;
+    font-size: 15px;
+    font-weight: bolder; 
+   } */
+
+
+    #asia01, #asia02, #asia03, #asia04,
+    #burg01, #burg02, #burg03, #burg04,
+    #past01, #past02, #past03, #past04,
+    #pizz01, #pizz02, #pizz03, #pizz04,
+    #sala01, #sala02, #sala03, #sala04,
+    #sand01, #sand02, #sand03, #sand04,
+    #vegg01, #vegg02, #vegg03, #vegg04,
+    #wrap01, #wrap02, #wrap03, #wrap04,
+    #precedent,#suivant, #commande,#contact,
+    #nex,#pre,#tou,#tous{ 
+color:rgb(21,244,238);
+font-family: poppins;
+font-weight: 150;
+border: 3px solid rgb(21,244,238);
+text-transform: uppercase;
+letter-spacing: 1px;
+cursor: pointer;
+font-size:15px;
+border-radius: 100px;
+transition: .1s;
+width:140px;
+vertical-align: middle;
+      
+  }
+
+  .btn:hover{
+    box-shadow:0 5px 50px 0 rgb(21,244,238) inset, 0 5px 50px 0 rgb(21,244,238),
+    0 5px 50px 0 rgb(21,244,238) inset,0 5px 50px 0 rgb(21,244,238);
+    text-shadow: 0 0 5px  rgb(21,244,238),0 0 5px  rgb(21,244,238);
+    }
+
+
+ 
+   
+ .navbar a:hover {
+  background: rgb(143, 41, 41);
+  color:orange ;
+}
+
+
+.navbar-toggler{
+  border: none;
+  font-size: 2.25rem;
+ } 
+
+/*pour page de commande text obligatoire*/
+span{
+  color: rgb(245, 76, 76);
+}
+
+/*pour page de commande*/
+label{
+  color:whitesmoke;
+  font-size: 25px;
+  font-weight: bolder;
+}
+/*page categorie images */
+img{
+border-radius: 80px;
+}
+
+/*pour page the touslesplats card title */
+
+
+/* imagedefond pour la page asiatique et les autres soif accueil */
+/* .imagedefond{
+  height: 360px;
+  border-radius: 0;
+} */
