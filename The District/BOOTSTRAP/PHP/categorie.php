@@ -6,6 +6,7 @@ require_once('DAO.php');
 // Récupérer les catégories depuis la base de données
 $categories = $dao->getCategories();
 
+
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +23,11 @@ $categories = $dao->getCategories();
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php 
+
+        //print_r($categories);
+
         // Boucle pour afficher chaque catégorie
-        foreach ($allCategories as $category): 
+        foreach ($categories as $category): 
         ?>
         <div class="col">
             <div class="card h-100">

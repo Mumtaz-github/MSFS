@@ -27,7 +27,7 @@ class DAO {
 
     public function getCategories() {
         // Requête SQL pour récupérer toutes les catégories actives
-        $sql = "SELECT * FROM categorie WHERE active = 1";
+        $sql = "SELECT * FROM categorie WHERE categorie.active = 'Yes'";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
