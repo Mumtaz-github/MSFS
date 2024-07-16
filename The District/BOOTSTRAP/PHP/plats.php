@@ -25,12 +25,12 @@ $dishes = $dao->getSixDishes();
     <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
       <div class="carousel-inner">
         <?php
-        $numSlides = ceil(count($dishes) / 3);
+        $numSlides = ceil(count($dishes) / 2);
         for ($i = 0; $i < $numSlides; $i++) :
         ?>
           <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
-            <div class="row row-cols-1 row-cols-md-3 g-2">
-              <?php foreach (array_slice($dishes, $i * 3, 3) as $dish) : ?>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <?php foreach (array_slice($dishes, $i * 2, 2) as $dish) : ?>
                 <div class="col">
                   <div class="card h-100">
                     <a href="commande.php?id=<?= $dish['id']; ?>">

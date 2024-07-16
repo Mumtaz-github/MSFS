@@ -13,7 +13,7 @@ try {
     // configurer le mode d'erreur PDO pour générer des exceptions
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo "Erreur de connexion à la base de données: ". $e->getMessage();
+    echo "Erreur de connexion à la base de données: " . $e->getMessage();
 }
 ?>
 <!DOCTYPE html>
@@ -23,8 +23,8 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <?php
     if ($_SERVER['REQUEST_URI'] == "/PHP/Accueil.php") {
         echo
@@ -33,8 +33,9 @@ try {
         echo
         '<link rel="stylesheet" href="../CSS/plats.css">';
     }
-   ?>
+    ?>
 </head>
+
 <body>
     <div class="parallax">
         <div class="container-fluid g-1">
@@ -46,34 +47,44 @@ try {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 topnav-centered">
+                            <?php
+                            $currentFile = basename($_SERVER['REQUEST_URI']);
+                            ?>
+
                             <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if($_SERVER['REQUEST_URI'] == "/PHP/Accueil.php") {echo "active";}?> espace"  href="Accueil.php">ACCUEIL</a>
+                                <a class="nav-link mx-md-4 <?php if ($currentFile == "Accueil.php") {
+                                                                echo "active";
+                                                            } ?> espace" href="Accueil.php">ACCUEIL</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if($_SERVER['REQUEST_URI'] == "/PHP/categorie.php"||$_SERVER['REQUEST_URI'] == "/PHP/Asiatique.php" ||$_SERVER['REQUEST_URI'] == "/PHP/Burger.php" ||$_SERVER['REQUEST_URI'] == "/PHP/Pasta.php" ||$_SERVER['REQUEST_URI']
-                                 == "/PHP/Pizza.php"||$_SERVER['REQUEST_URI'] == "/PHP/Salade.php"||$_SERVER['REQUEST_URI'] == "/PHP/Sandwich.php"||$_SERVER['REQUEST_URI'] == "/PHP/Veggie.php"||$_SERVER['REQUEST_URI'] == "/PHP/Wrap.php") {echo "active";}?> espace "  href="categorie.php">CATEGORIE</a>
+                                <a class="nav-link mx-md-4 <?php if (in_array($currentFile, ["categorie.php", "Asiatique.php", "Burger.php", "Pasta.php", "Pizza.php", "Salade.php", "Sandwich.php", "Veggie.php", "Wrap.php"])) {
+                                                                echo "active";
+                                                            } ?> espace " href="categorie.php">CATEGORIE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if($_SERVER['REQUEST_URI'] == "/PHP/plats.php") {echo "active";}?> espace " href="plats.php">PLATS</a>
+                                <a class="nav-link mx-md-4 <?php if ($currentFile == "plats.php") {
+                                                                echo "active";
+                                                            } ?> espace " href="plats.php">PLATS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if($_SERVER['REQUEST_URI'] == "/PHP/Contact.php") {echo "active";}?> espace "  href="Contact.php">CONTACT</a>
+                                <a class="nav-link mx-md-4 <?php if ($currentFile == "Contact.php") {
+                                                                echo "active";
+                                                            } ?> espace " href="Contact.php">CONTACT</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-  <div class="image-container">  
-        <?php if ($_SERVER['REQUEST_URI']!= "/PHP/Commande.php"){?>
-            <div class="card no-hover" style="background-color:black;"> 
-                <video id="video" class="col-12" src="../IMG/mixk.mp4" style="width: 100%; height: 40vh;"
-                playsinline autoplay loop muted></video> 
-            </div>
-        <?php }?>
-        <?php if (basename($_SERVER['REQUEST_URI']) == "Accueil.php") {?>
-    <div class="ongletrecherche"> 
-        <input class="form-control me rounded-pill" type="search" placeholder="Search" aria-label="Search">
-    </div>
-<?php }?>
-    </div>
+        <div class="image-container">
+            <?php if ($_SERVER['REQUEST_URI'] != "/PHP/Commande.php") { ?>
+                <div class="card no-hover" style="background-color:black;">
+                    <video id="video" class="col-12" src="../IMG/mixk.mp4" style="width: 100%; height: 40vh;" playsinline autoplay loop muted></video>
+                </div>
+            <?php } ?>
+            <?php if (basename($_SERVER['REQUEST_URI']) == "Accueil.php") { ?>
+                <div class="ongletrecherche">
+                    <input class="form-control me rounded-pill" type="search" placeholder="Search" aria-label="Search">
+                </div>
+            <?php } ?>
+        </div>
