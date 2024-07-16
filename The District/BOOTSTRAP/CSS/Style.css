@@ -76,21 +76,23 @@ body, html {
 }
 
 /* accueil images border radius */
-.card-img-top{
-  border-radius: 80px;
-  padding: 20px;
-}
+.card{             
+  border: 10px;
+  background-color:#ff8c00;;
+  border-radius: 30px;
+  margin: 10px;} 
+  /*width: 100%;*/
 
-.cards.body{
-padding: 50px;
+.card.body{
+padding: 60px;
 margin:-30px ;
 }
 
 /* pour image de accueil animation */
-.cards{
+.card{
   transition: .5s ease;
 }
-.cards:hover{
+.card:hover{
   transform: scale(1.1);
 }
 .n-hover{

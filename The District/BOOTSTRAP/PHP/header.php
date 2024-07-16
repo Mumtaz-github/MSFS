@@ -12,28 +12,28 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // configurer le mode d'erreur PDO pour générer des exceptions
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    echo "Erreur de connexion à la base de données: " . $e->getMessage();
+} catch (PDOException $e) {
+    echo "Erreur de connexion à la base de données: ". $e->getMessage();
 }
 ?>
-
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The District</title>
+    <title>Accueil</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <?php
     if ($_SERVER['REQUEST_URI'] == "/PHP/Accueil.php") {
         echo
-        '<link rel="stylesheet" href="../CSS/district.css">';
+        '<link rel="stylesheet" href="../CSS/Style.css">';
     } else {
         echo
         '<link rel="stylesheet" href="../CSS/plats.css">';
     }
-    ?>
+   ?>
 </head>
 <body>
     <div class="parallax">
@@ -64,20 +64,16 @@ try {
                 </div>
             </nav>
         </div>
-        <div class="image-container">  
-    <?php if ($_SERVER['REQUEST_URI']!= "/PHP/Commande.php"){?>
-        <!--<div class="card no-hover" style="background-color:black;"> 
-
-            <!--<video id="video" class="col-12" src="../IMG/video.mp4" style="width: 100%; height: 35vh;"
-                playsinline autoplay loop muted></video> <!-- pour le video style="width: 100vmax; height: 35vh-->
-                
-            <video id="video" class="col-12" src="../IMG/large.mp4" style="width: 100%; height: 40vh;"
+  <div class="image-container">  
+        <?php if ($_SERVER['REQUEST_URI']!= "/PHP/Commande.php"){?>
+            <div class="card no-hover" style="background-color:black;"> 
+                <video id="video" class="col-12" src="../IMG/mixk.mp4" style="width: 100%; height: 40vh;"
                 playsinline autoplay loop muted></video> 
-        <?php }?>
-        <?php if($_SERVER['REQUEST_URI'] == "/PHP/Accueil.php") {?>
-            <div class="ongletrecherche"> 
-                <input class="form-control me rounded-pill" type="search" placeholder="Search" aria-label="Search">
             </div>
         <?php }?>
+        <?php if (basename($_SERVER['REQUEST_URI']) == "Accueil.php") {?>
+    <div class="ongletrecherche"> 
+        <input class="form-control me rounded-pill" type="search" placeholder="Search" aria-label="Search">
     </div>
-
+<?php }?>
+    </div>

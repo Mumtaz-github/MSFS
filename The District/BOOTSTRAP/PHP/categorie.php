@@ -14,12 +14,14 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catégories</title>
-   <link rel="stylesheet" href=" ../CSS/style.css"> 
+  <link rel="stylesheet" href=" ../CSS/style.css">
 </head>
+
 <body>
   <div class="container py-2">
     <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
@@ -32,9 +34,11 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
                   <div class="card h-60">
                     <a href="categorie.php?id=<?= $category['id']; ?>">
                       <img src="img/<?= $category['image']; ?>" class="card-img-top" alt="<?= $category['libelle']; ?>">
+                      <div class="card-img-overlay text-center">
                     </a>
                     <div class="card-body">
-                      <h5 class="card-title"><?= $category['libell']; ?></h5>
+                      <h5 class="card-title"><?= $category['libelle']; ?></h5>
+                    </div>
                     </div>
                   </div>
                 </div>

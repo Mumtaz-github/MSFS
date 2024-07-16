@@ -151,5 +151,15 @@ class DAO {
 
 // Instancier le DAO
 $dao = new DAO($conn);
+// Récupérer les catégories populaires
+$categories = $dao->getPopularCategories();
 
+// Récupérer les plats les plus vendus
+$bestSellingDishes = $dao->getBestSellingDishes();
+
+// Récupérer toutes les catégories
+$allCategories = $dao->getCategories();
+
+// Récupérer les 6 plats
+$sixDishes = $dao->getSixDishes();
 ?>
