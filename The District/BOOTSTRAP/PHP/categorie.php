@@ -6,71 +6,77 @@ require_once('DAO.php');
 // Récupérer les catégories depuis la base de données
 $categories = $dao->getCategories();
 
+// Calculate the number of items per slide
+$itemsPerSlide = 3;
 
+// Calculate the number of slides
+$numSlides = ceil(count($categories) / $itemsPerSlide);
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catégories</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catégories</title>
 </head>
 <body>
-<div class="container py-5">
-    <h1 class="text-center mb-4">Nos catégories</h1>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <?php 
-
-        //print_r($categories);
-
-        // Boucle pour afficher chaque catégorie
-        foreach ($categories as $category): 
-        ?>
-        <div class="col">
-            <div class="card h-100">
-                <a href="categorie.php?id=<?php echo $category['id']; ?>">
-                    <img src="img/<?php echo $category['image']; ?>" class="card-img-top" alt="<?php echo $category['libelle']; ?>">
-                </a>
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $category['libelle']; ?></h5>
+  <div class="container py-2">
+    <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <?php for ($i = 0; $i < $numSlides; $i++) : ?>
+          <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
+            <div class="row row-cols-1 row-cols-md-3 g-2">
+              <?php foreach (array_slice($categories, $i * $itemsPerSlide, $itemsPerSlide) as $category) : ?>
+                <div class="col">
+                  <div class="card h-100">
+                    <a href="categorie.php?id=<?= $category['id']; ?>">
+                      <img src="img/<?= $category['image']; ?>" class="card-img-top" alt="<?= $category['libelle']; ?>">
+                    </a>
+                    <div class="card-body">
+                      <h5 class="card-title"><?= $category['libelle']; ?></h5>
+                    </div>
+                  </div>
                 </div>
+              <?php endforeach; ?>
             </div>
-        </div>
-        <?php endforeach; ?>
-    </div>
-</div>
-
-
-
-<?php include 'footer.php'?>
-
-</body>
-</html>
-
-  <!-- ICI Mes boutons de carousel -->
-  <div class="container-fluid mt-2 mb-2">
-    <div class="col">
-      <div class="col d-flex justify-content-evenly">
-        <button class="carousel-control-prev bg-primary d-none" id="carouselcatprec" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="btn btn-dark btn-lg rounded-pill col-md-1" onclick="precedent()" type="button" id="pre">Précédent</button>
-        <button class="carousel-control-next d-none" id="carouselcatsuiv" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-        <button class="btn btn-dark btn-lg rounded-pill col-md-1" onclick="suivant()" type="button" id="nex">Suivant</button>
+          </div>
+        <?php endfor; ?>
       </div>
-    </div>
-  </div>
 
-<?php require_once('../PHP/footer.php')?>
+      <div class="container-fluid mt-2 mb-2">
+        <div class="col">
+          <div class="col d-flex justify-content-evenly">
+            <button class="carousel-control-prev bg-primary d-none" id="carouselcatprec" type="button" data-bs-target="#carouselExample" d data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="btn btn-dark btn-lg rounded-pill col-md-1 " onclick="precedent()" type="button" id="pre">Précédent</button>
+            <button class="carousel-control-next d-none" id="carouselcatsuiv" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+            <button class="btn btn-dark btn-lg rounded-pill col-md-1" onclick="suivant()" type="button" id="nex">Suivant</button>
+          </div>
+        </div>
+      </div>
 
 
 
+      <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+      <script src="../JAVASCRIPT/categplats.JS"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
+
+      <!-- Remove the custom JavaScript code, as it's not needed -->
+      <!-- <script>
+        function precedent() {
+            $('#carouselExample').carousel('prev');
+        }
+
+        function suivant() {
+            $('#carouselExample').carousel('next');
+        }
+    </script> -->
+
+      <?php require_once('../PHP/footer.php') ?>
 </body>
 
 </html>

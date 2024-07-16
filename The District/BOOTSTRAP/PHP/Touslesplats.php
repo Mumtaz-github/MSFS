@@ -7,11 +7,11 @@
     <title>TOUS LES PLATS</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href=" ../CSS/plats.css">
+    <link rel="stylesheet" href=" ../CSS/pla.css">
   </head>
 
   <body>
-    <?php require_once('../PHP/header.php') ?>
+    <?php require_once('../PHP/heade.php') ?>
     <!-- <img class="imagedefond img-fluid" src="../IMG/bg2.jpeg" height="10px" width="100%" position="relative:"> -->
     <!-- <video id="video" class="mx-auto" src="../IMG/video.mp4" style="width: 100%; height: 35vh;" playsinline autoplay
             loop muted></video>-->
@@ -351,7 +351,7 @@
         </div>
       </div>
       <!-- ****************************socail media icons***************************-->
-      <?php require_once('../PHP/footer.php') ?>
+      <?php require_once('../PHP/foor.php') ?>
 
 
 
@@ -364,7 +364,8 @@
       <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
       <script src="../JAVASCRIPT/categplats.JS"></script>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 
   </body>
