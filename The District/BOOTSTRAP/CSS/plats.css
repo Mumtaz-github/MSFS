@@ -108,7 +108,7 @@ video {
     border: 10px;
     background-color:#ff8c00;;
     border-radius: 30px;
-    margin: 10px;} 
+    margin: 0px;} 
     /*width: 100%;*/
 
     
@@ -117,8 +117,9 @@ video {
 /*c pour cards de tous les plats comme asiatique,burger,pasta etc*/
    .card-img-top{
     border-radius: 30px;
-    height: 230px;
+    height: 260px;
     padding: 2px;
+
    }  
 
   
@@ -229,3 +230,10 @@ border-radius: 80px;
   height: 360px;
   border-radius: 0;
 } */
+
+/*page commande */
+.img-fluid{
+  width: 300px;
+  height: 230px;
+  border-radius: 30px;
+}

@@ -50,11 +50,11 @@ try {
                                 <a class="nav-link mx-md-4 <?php if($_SERVER['REQUEST_URI'] == "/PHP/Accueil.php") {echo "active";}?> espace"  href="Accueil.php">ACCUEIL</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if($_SERVER['REQUEST_URI'] == "/PHP/Categorie.php"||$_SERVER['REQUEST_URI'] == "/PHP/Asiatique.php" ||$_SERVER['REQUEST_URI'] == "/PHP/Burger.php" ||$_SERVER['REQUEST_URI'] == "/PHP/Pasta.php" ||$_SERVER['REQUEST_URI']
-                                 == "/PHP/Pizza.php"||$_SERVER['REQUEST_URI'] == "/PHP/Salade.php"||$_SERVER['REQUEST_URI'] == "/PHP/Sandwich.php"||$_SERVER['REQUEST_URI'] == "/PHP/Veggie.php"||$_SERVER['REQUEST_URI'] == "/PHP/Wrap.php") {echo "active";}?> espace "  href="Categorie.php">CATEGORIE</a>
+                                <a class="nav-link mx-md-4 <?php if($_SERVER['REQUEST_URI'] == "/PHP/categorie.php"||$_SERVER['REQUEST_URI'] == "/PHP/Asiatique.php" ||$_SERVER['REQUEST_URI'] == "/PHP/Burger.php" ||$_SERVER['REQUEST_URI'] == "/PHP/Pasta.php" ||$_SERVER['REQUEST_URI']
+                                 == "/PHP/Pizza.php"||$_SERVER['REQUEST_URI'] == "/PHP/Salade.php"||$_SERVER['REQUEST_URI'] == "/PHP/Sandwich.php"||$_SERVER['REQUEST_URI'] == "/PHP/Veggie.php"||$_SERVER['REQUEST_URI'] == "/PHP/Wrap.php") {echo "active";}?> espace "  href="categorie.php">CATEGORIE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if($_SERVER['REQUEST_URI'] == "/PHP/platsDistrict.php") {echo "active";}?> espace " href="Touslesplats.php">PLATS</a>
+                                <a class="nav-link mx-md-4 <?php if($_SERVER['REQUEST_URI'] == "/PHP/plats.php") {echo "active";}?> espace " href="plats.php">PLATS</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link mx-md-4 <?php if($_SERVER['REQUEST_URI'] == "/PHP/Contact.php") {echo "active";}?> espace "  href="Contact.php">CONTACT</a>
@@ -71,7 +71,7 @@ try {
             <!--<video id="video" class="col-12" src="../IMG/video.mp4" style="width: 100%; height: 35vh;"
                 playsinline autoplay loop muted></video> <!-- pour le video style="width: 100vmax; height: 35vh-->
                 
-            <video id="video" class="col-12" src="../IMG/mixk.mp4" style="width: 100%; height: 40vh;"
+            <video id="video" class="col-12" src="../IMG/large.mp4" style="width: 100%; height: 40vh;"
                 playsinline autoplay loop muted></video> 
         <?php }?>
         <?php if($_SERVER['REQUEST_URI'] == "/PHP/Accueil.php") {?>

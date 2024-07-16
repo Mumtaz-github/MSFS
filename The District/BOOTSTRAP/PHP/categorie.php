@@ -18,6 +18,7 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catégories</title>
+   <link rel="stylesheet" href=" ../CSS/style.css"> 
 </head>
 <body>
   <div class="container py-2">
@@ -28,12 +29,12 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
             <div class="row row-cols-1 row-cols-md-3 g-2">
               <?php foreach (array_slice($categories, $i * $itemsPerSlide, $itemsPerSlide) as $category) : ?>
                 <div class="col">
-                  <div class="card h-100">
+                  <div class="card h-60">
                     <a href="categorie.php?id=<?= $category['id']; ?>">
                       <img src="img/<?= $category['image']; ?>" class="card-img-top" alt="<?= $category['libelle']; ?>">
                     </a>
                     <div class="card-body">
-                      <h5 class="card-title"><?= $category['libelle']; ?></h5>
+                      <h5 class="card-title"><?= $category['libell']; ?></h5>
                     </div>
                   </div>
                 </div>

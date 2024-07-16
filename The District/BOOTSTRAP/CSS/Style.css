@@ -146,5 +146,8 @@ margin:-30px ;
   transform: scale3d(1.2, 1.2, 1);
 }
  */
-
- 
+ .card{             
+  border: 10px;
+  background-color:#ff8c00;;
+  border-radius: 30px;
+  margin: 90px;} 
