@@ -3,6 +3,10 @@ require_once('header.php');
 require_once('database.php');
 require_once('DAO.php');
 
+
+$categories = $dao->getPopularCategories();
+$bestSellingDishes = $dao->getBestSellingDishes();
+
 // Récupérer les catégories depuis la base de données
 $categories = $dao->getCategories();
 
@@ -32,13 +36,13 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
               <?php foreach (array_slice($categories, $i * $itemsPerSlide, $itemsPerSlide) as $category) : ?>
                 <div class="col">
                   <div class="card h-60">
-                    <a href="categorie.php?id=<?= $category['id']; ?>">
-                      <img src="img/<?= $category['image']; ?>" class="card-img-top" alt="<?= $category['libelle']; ?>">
-                      <div class="card-img-overlay text-center">
-                    </a>
-                    <div class="card-body">
-                      <h5 class="card-title"><?= $category['libelle']; ?></h5>
-                    </div>
+                  <a href="plats.php?category_id=<?= $category['id'];?>" style="position: relative; z-index: 1;">
+  <img src="img/<?= $category['image'];?>" class="card-img-top" alt="<?= $category['libelle'];?>">
+</a>
+                    <div class="card-img-overlay text-center">
+                      <div class="card-body">
+                        <h5 class="card-title"><?= $category['libelle']; ?></h5>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -70,16 +74,7 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 
-      <!-- Remove the custom JavaScript code, as it's not needed -->
-      <!-- <script>
-        function precedent() {
-            $('#carouselExample').carousel('prev');
-        }
 
-        function suivant() {
-            $('#carouselExample').carousel('next');
-        }
-    </script> -->
 
       <?php require_once('../PHP/footer.php') ?>
 </body>
