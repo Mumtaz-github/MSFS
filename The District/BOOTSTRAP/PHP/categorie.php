@@ -3,11 +3,12 @@ require_once('header.php');
 require_once('database.php');
 require_once('DAO.php');
 
+$dao = new DAO($GLOBALS['conn']);
 
-$categories = $dao->getPopularCategories();
+// Retrieve the best-selling dishes
 $bestSellingDishes = $dao->getBestSellingDishes();
 
-// Récupérer les catégories depuis la base de données
+// Retrieve the categories from the database
 $categories = $dao->getCategories();
 
 // Calculate the number of items per slide
@@ -15,6 +16,20 @@ $itemsPerSlide = 3;
 
 // Calculate the number of slides
 $numSlides = ceil(count($categories) / $itemsPerSlide);
+
+// this below stoped to work then did modifiction and the above is now working
+
+// $categories = $dao->getPopularCategories();
+// $bestSellingDishes = $dao->getBestSellingDishes();
+
+// // Récupérer les catégories depuis la base de données
+// $categories = $dao->getCategories();
+
+// // Calculate the number of items per slide
+// $itemsPerSlide = 3;
+
+// // Calculate the number of slides
+// $numSlides = ceil(count($categories) / $itemsPerSlide);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,8 +52,8 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
                 <div class="col">
                   <div class="card h-60">
                   <a href="plats.php?category_id=<?= $category['id'];?>" style="position: relative; z-index: 1;">
-  <img src="img/<?= $category['image'];?>" class="card-img-top" alt="<?= $category['libelle'];?>">
-</a>
+                   <img src="img/<?= $category['image'];?>" class="card-img-top" alt="<?= $category['libelle'];?>">
+                    </a>
                     <div class="card-img-overlay text-center">
                       <div class="card-body">
                         <h5 class="card-title"><?= $category['libelle']; ?></h5>
@@ -70,6 +85,8 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
 
       <?php require_once('../PHP/footer.php') ?>
       <script src="../JAVASCRIPT/searchbar.js"></script>
+   
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

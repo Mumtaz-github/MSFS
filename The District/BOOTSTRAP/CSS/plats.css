@@ -248,28 +248,5 @@ border-radius: 80px;
   height:1700px;} */ 
 
   
-  .ongletrecherche {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    height: 100%;
-  }
+
   
-  .ongletrecherche input[type="search"] {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .ongletrecherche button[type="submit"] {
-    background-color: #4CAF50;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }

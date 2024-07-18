@@ -8,6 +8,46 @@ background-color: #ff8c00;
 
 
 
+.ongletrecherche form {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  
+} 
+
+.ongletrecherche input[type="search"] {
+  flex: 1;
+  margin-right: 5px;
+  height: 45px;
+  border-radius: 15px;
+}
+
+.ongletrecherche button[type="submit"] {
+  background-color: #333; /*#4CAF50*/
+  color: #ffffff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  height: 45px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
  /* search area on video  */
  /* .ongletrecherche{                            
   position: absolute;

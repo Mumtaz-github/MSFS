@@ -32,3 +32,20 @@ searchForm.addEventListener('submit', (e) => {
   })
   .catch(error => console.error('Error:', error));
 });
+
+
+
+
+
+
+ /* pour la page de categorie */
+
+ function precedent()                    
+ {
+     document.getElementById("carouselcatprec").click();
+ }
+ 
+ function suivant()
+ {
+     document.getElementById("carouselcatsuiv").click();
+ }

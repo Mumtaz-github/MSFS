@@ -11,6 +11,21 @@ class DAO {
         $this->conn = $conn;
     }
     
+
+    public function insertCommande($plat_id, $quantite, $total_prix) {
+        $query = "INSERT INTO commande (plat_id, quantite, total_prix) VALUES (:plat_id, :quantite, :total_prix)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':plat_id', $plat_id);
+        $stmt->bindParam(':quantite', $quantite);
+        $stmt->bindParam(':total_prix', $total_prix);
+        $stmt->execute();
+    }
+
+
+
+
+
+
     // categorie page accueil
     public function getPopularCategories() {
         // Requête SQL pour récupérer les 6 catégories les plus populaires

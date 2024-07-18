@@ -26,6 +26,9 @@ if (isset($_GET['category_id'])) {
 
 ?>
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,12 +45,10 @@ if (isset($_GET['category_id'])) {
     <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
       <div class="carousel-inner">
         <?php
-        // this function is to display 2 plats at a time on plats.php on peux faire modification 2 to 3 and so on
         $numSlides = ceil(count($dishes) / 2);
         for ($i = 0; $i < $numSlides; $i++) :
         ?>
- 
-          <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>"> <!--here it display database table categorie active categories-->
+          <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
             <div class="row row-cols-1 row-cols-md-2 g-4">
               <?php foreach (array_slice($dishes, $i * 2, 2) as $dish) : ?>
                 <div class="col">
@@ -91,9 +92,4 @@ if (isset($_GET['category_id'])) {
 
       <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
       <script src="../JAVASCRIPT/searchbar.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    </div>
-  </div>
-</body>
-
-</html>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1
