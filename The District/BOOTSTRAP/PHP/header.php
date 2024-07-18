@@ -83,8 +83,21 @@ try {
                 </div>
             <?php } ?>
             <?php if (basename($_SERVER['REQUEST_URI']) == "Accueil.php") { ?>
-                <div class="ongletrecherche">
+                <!-- <div class="ongletrecherche">
                     <input class="form-control me rounded-pill" type="search" placeholder="Search" aria-label="Search">
-                </div>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </div> -->
+                <!-- <div  class="ongletrecherche">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </div> -->
+<!-- header.php -->
+<!-- <div class="ongletrecherche">
+  <form action="search.php" method="get">
+    <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div> -->
+
             <?php } ?>
         </div>

@@ -75,30 +75,64 @@ class DAO {
         return $stmt->fetchAll();
     }
 
-
-
-   
-   
-
-    public function getCategoryById($id) {
+public function getCategoryById($id) {
         $sql = "SELECT * FROM categorie WHERE id = :id";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':id', $id);
         $stmt->execute();
         return $stmt->fetch();
     }
+
+
+
+    public function searchAllTables($searchQuery) {
+        $results = array();
+        $tables = array(
+            'plat' => array('libelle', 'description', 'prix', 'id_categorie'),
+            'commande' => array('quantite', 'id_plat', 'total', 'date_commande', 'nom_client'),
+            // 'utilisateur' => array('nom', 'prenom', 'email'),
+            'categorie' => array('libelle', 'id', 'active')
+        );
+        
+        foreach ($tables as $table => $columns) {
+            $sql = "SELECT * FROM $table WHERE ";
+            $params = array();
+            foreach ($columns as $i => $column) {
+                $sql.= "$column LIKE? ";
+                $params[] = "%$searchQuery%";
+                if ($i < count($columns) - 1) {
+                    $sql.= " OR "; // use OR instead of AND
+                }
+            }
+            $stmt = $this->conn->prepare($sql);
+            foreach ($params as $i => $param) {
+                $stmt->bindParam($i + 1, $param, PDO::PARAM_STR);
+            }
+            $stmt->execute();
+            $results[$table] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $results;
+    }
 }
-// Instancier le DAO
-$dao = new DAO($conn);
-// Récupérer les catégories populaires
-$categories = $dao->getPopularCategories();
+    
+    
+    
+    // <--- Add this closing brace to close the DAO class
 
-// Récupérer les plats les plus vendus
-$bestSellingDishes = $dao->getBestSellingDishes();
+     // Closing brace for the class
+    
+    // No need for at the end of the file
+// // Instancier le DAO
+// $dao = new DAO($conn);
+// // Récupérer les catégories populaires
+// $categories = $dao->getPopularCategories();
 
-// Récupérer toutes les catégories
-$allCategories = $dao->getCategories();
+// // Récupérer les plats les plus vendus
+// $bestSellingDishes = $dao->getBestSellingDishes();
 
-// Récupérer les 6 plats
-$sixDishes = $dao->getSixDishes();
-?>
+// // Récupérer toutes les catégories
+// $allCategories = $dao->getCategories();
+
+// // Récupérer les 6 plats
+// $sixDishes = $dao->getSixDishes();
+
