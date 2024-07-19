@@ -15,36 +15,48 @@
     <!-- <img class="imagedefond img-fluid" src="../IMG/bg2.jpeg" height="10px" width="100%" position="relative:"> -->
     <!--<video id="video" class="mx-auto" src="../IMG/video.mp4" style="width: 100%; height: 35vh;" playsinline autoplay
             loop muted></video>-->
-    <div class="container mt-5">
+            <div class="container mt-5 p-5" style="justify-content: center;">
+       
+            
         <form class="row g-3" id="formulaire" action="Contactformularie.php" method="post">
-            <div class="col-md-6">
-                <label for="a" class="form-label">Nom</label>
+        <div class="col-md-8 offset-md-2">
+        <div class="form-group">
+                <label for="a" class="form-label float-right">Nom</label>
                 <input type="text" name="Nom" class="form-control" id="a" style="background-color: rgb(174, 214, 236);">
                 <span>ce champ est obligatoire</span>
             </div>
-            <div class="col-md-6">
-                <label for="b" class="form-label">Prénom</label>
+            </div>
+            <div class="col-md-8 offset-md-2">
+            <div class="form-group">
+                <label for="b" class="form-label float-right">Prénom</label>
                 <input type="text" name="Prenom" class="form-control" id="b" style="background-color: rgb(174, 214, 236);">
             </div>
-            <div class="col-md-6">
-                <label for="c" class="form-label">Email</label>
+            </div>
+            <div class="col-md-8 offset-md-2">
+            <div class="form-group">
+                <label for="c" class="form-label float-right">Email</label>
                 <input type="email" name="Email" class="form-control" id="c" style="background-color: rgb(174, 214, 236);">
             </div>
-            <div class="col-md-6">
-                <label for="d" class="form-label">Phone Number</label>
+            </div>
+            <div class="col-md-8 offset-md-2">
+      <div class="form-group">
+                <label for="d" class="form-label float-right">Phone Number</label>
                 <input type="text" name="PhoneNumber" class="form-control" id="d" placeholder="+33(....)" style="background-color: rgb(174, 214, 236);">
                 <span>ce champ est obligatoire</span>
             </div>
-            <div class="col-md-12">
-                <label for="e" class="form-label">Votre Demande</label>
+            </div>
+            <div class="col-md-8 offset-md-2">
+      <div class="form-group">
+                <label for="e" class="form-label float-right">Votre Demande</label>
                 <textarea name="Demande" class="form-control" id="e" rows="3" style="background-color: rgb(174, 214, 236);"></textarea>
             </div>
-            <div class="col-md-12">
+            </div>
+            <div class="col-md-10">
                 <button type="submit" class="btn  rounded-pill btn-dark btn-sm float-end " id="contact">Envoyer</button>
                 <!--class="btn btn-primary-->
             </div>
         </form>
-    </div>
+        </div>
     <?php require_once('../PHP/footer.php') ?>
 
     <script src="../JAVASCRIPT/searchbar.js"></script>

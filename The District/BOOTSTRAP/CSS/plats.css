@@ -66,31 +66,16 @@ video {
     object-fit: fill;
   } 
 
-/*   
-.parallax {
-  /* The image used */
-  /* background-image: url("../IMG/photo.avif"); */
-
-  /* Full height */
-  /*height:1772px;*/
-  /* height:1860px; */
-
-  /* Create the parallax scrolling effect */
-  /* background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */ */
 
 
 
 
 
     /*this transition applied on page the categorie'imags*/
-    .cards{
+    .card{
       transition: .5s ease;
     }
-    .cards:hover{
+    .card:hover{
       transform: scale(1.1);
     }
     .n-hover{
@@ -104,11 +89,14 @@ video {
     
      
  /*  card formating 8 pages of plats-*/
-   .card{             
-    border: 10px;
-    background-color:#ff8c00;;
-    border-radius: 30px;
-    margin: 0px;} 
+    .card{             
+    border: 5px;
+    background-color:#ff8c00;
+    border-radius: 50px;
+    margin: 0px;
+    padding: 5px;
+    /*padding gave the border red to categorie of page accueil*/
+  }  
     /*width: 100%;*/
 
     
@@ -116,10 +104,10 @@ video {
 
 /*c pour cards de tous les plats comme asiatique,burger,pasta etc*/
    .card-img-top{
-    border-radius: 30px;
-    height: 260px;
-    padding: 2px;
-
+    border-radius: 50px;
+    /* height: 260px;  
+    padding: 2px; */
+/*here it removed the page accueil categories border and increased size*/
    }  
 
   
@@ -232,21 +220,45 @@ border-radius: 80px;
 } */
 
 /*page commande */
-.img-fluid{
+/* .img-fluid{
   width: 300px;
   height: 230px;
   border-radius: 30px;
+} */
+
+
+
+  
+/*this is for footer*/
+footer {
+  background-color: #ff8c00;
+  padding: 10;
+  margin: 10;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-
-/* .parallax {
-  /* The image used */
-  /* background-image: url("../IMG/photo.avif");
-
- 
-  height:1700px;} */ 
-
+/* footer .container {
+  width: 100%;
+  padding: none;
   
+}  */
 
-  
+
+
+/*this one is for socail icons between space*/
+
+footer .btn-social {
+  margin: 0px;
+  width: calc(10% - 20px);
+} 
+
+/* .custom-card {
+  max-width: 60%; /* adjust the width to your liking */
+  /*height: 200px; /* adjust the height to your liking */
+  /*font-size: 0.8em; /* adjust the font size to your liking */
