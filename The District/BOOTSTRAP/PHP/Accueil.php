@@ -70,9 +70,7 @@ $bestSellingDishes = $dao->getBestSellingDishes();
       <!-- < /div>
     </section> --> --> -->
 
-    <?php require_once('../PHP/footer.php')?>
-  </body>
-</html>
+
 
     <?php require_once('../PHP/footer.php') ?>
     <script src="../JAVASCRIPT/searchbar.js"></script>
