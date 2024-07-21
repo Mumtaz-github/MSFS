@@ -7,28 +7,7 @@
  border-style: inherit; */
 }
 
-
-
-
- /* search area on video 
-  .ongletrecherche{                            
-  position: absolute;
-  top: 32%;
-  left: 44%;
-  border-radius: 50px;
-  transform:translate(-20%, -50%);
-  z-index: 1;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  }  */
-
-
-
-
-
-  
-
-  /* for navbar text like accueil,categorie,plats and contact*/
+ /* for navbar text like accueil,categorie,plats and contact*/
   .nav-link{
     color: white;
     font-size: 32px;
@@ -37,20 +16,6 @@
    font-weight: bolder;
   }
  
-
-     /* .parallax {
-      /* The image used */
-     /* background-image: url("../IMG/photo.avif");
-    
-      /* Full height */
-    /*  height:1157px; 
-    
-      /* Create the parallax scrolling effect */
-     /* background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    } */
 
 
    /* accueil, categorie, plats,*/
@@ -68,38 +33,35 @@ video {
 
 
 
+/* pour image de accueil animation */
+.card{
+  transition: .6s ease;
+}
+.card:hover{
+  transform: scale(1.1);
+}
+.n-hover{
+  transition: none;
+  transform: none;
+}
 
-
-
-    /*this transition applied on page the categorie'imags*/
-    .card{
-      transition: .5s ease;
-    }
-    .card:hover{
-      transform: scale(1.1);
-    }
-    .n-hover{
-      transition: none;
-      transform: none;
-    }
-    
-    .n-hover:hover{
-      transform: none;
-    }
-    
+.n-hover:hover{
+  transform: none;
+}
      
- /*  card formating 8 pages of plats-*/
+ /*  card formating page accueil-*/
     .card{             
     border: 5px;
     background-color:#ff8c00;
     border-radius: 50px;
     margin: 0px;
     padding: 5px;
+   
     /*padding gave the border red to categorie of page accueil*/
   }  
     /*width: 100%;*/
 
-    
+
     
 
 /*c pour cards de tous les plats comme asiatique,burger,pasta etc*/
@@ -141,24 +103,16 @@ video {
     font-weight: bolder;
     }
 
-       /* for page the categorie,touslesplats carousel title*/
-   /* .card-title{
-    color: white;
-    font-size: 15px;
-    font-weight: bolder; 
-   } */
+   
 
-
-    #asia01, #asia02, #asia03, #asia04,
-    #burg01, #burg02, #burg03, #burg04,
-    #past01, #past02, #past03, #past04,
-    #pizz01, #pizz02, #pizz03, #pizz04,
-    #sala01, #sala02, #sala03, #sala04,
-    #sand01, #sand02, #sand03, #sand04,
-    #vegg01, #vegg02, #vegg03, #vegg04,
-    #wrap01, #wrap02, #wrap03, #wrap04,
+   
+   
+  
+  
+   
+    
     #precedent,#suivant, #commande,#contact,
-    #nex,#pre,#tou,#tous{ 
+    #nex,#pre,#tou,#tous, #pla{ 
 color:rgb(21,244,238);
 font-family: poppins;
 font-weight: 150;
@@ -210,21 +164,17 @@ img{
 border-radius: 80px;
 }
 
-/*pour page the touslesplats card title */
 
 
-/* imagedefond pour la page asiatique et les autres soif accueil */
-/* .imagedefond{
-  height: 360px;
-  border-radius: 0;
-} */
+
+
 
 /*page commande */
-/* .img-fluid{
-  width: 300px;
-  height: 230px;
+ .img-fluid{
+  width: 500px;
+  height: 300px;
   border-radius: 30px;
-} */
+} 
 
 
 
@@ -258,7 +208,31 @@ footer .btn-social {
   width: calc(10% - 20px);
 } 
 
-/* .custom-card {
-  max-width: 60%; /* adjust the width to your liking */
-  /*height: 200px; /* adjust the height to your liking */
-  /*font-size: 0.8em; /* adjust the font size to your liking */
+
+/*carousel hide the cards , this is make the card visible*/
+  .carousel-inner {
+    overflow: visible;
+  }
+
+  .custom-card {
+    max-width: 900px; /* set a maximum width for the custom card */
+    margin:  auto; /* center the custom card horizontally */
+    padding: 20px;
+  }
+
+
+  .info-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+
+}
+
+.info-link-left {
+    margin-right: 20px;
+}
+
+.info-link-right {
+    margin-left: 20px;
+}
+

@@ -52,7 +52,7 @@ $dish = getDishDetails($id);
     <?php require_once('../PHP/header.php')?>
 
     <div class="container mt-5 p-5" style="justify-content: center;">
-        <div class="card mb-5 text-center mx-auto p-5" style="max-width: 802px; background-color:#ff8c00">
+        <div class="card mb-5 text-center mx-auto p-2" style="max-width: 802px; background-color:#ff8c00">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="img/<?= $dishImage;?>" class="img-fluid" alt="...">
@@ -64,7 +64,7 @@ $dish = getDishDetails($id);
                         <div class="d-flex justify-content-end mt-auto p-4">
                             <label> Quantité:</label>
                             <input type="number" id="number" style="width: 15%;" min="0" max="50" value="1">
-                            <input type="hidden" id="prix" value="<?= $dish['prix'];?>">
+                            <input type="hidden" id="prix" value="<?= $dish['prix'];?>"> 
                             <span id="totalChamp">Total : <?= $dish['prix'];?> €</span>
                         </div>
                     </div>

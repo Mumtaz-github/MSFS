@@ -24,12 +24,12 @@ $bestSellingDishes = $dao->getBestSellingDishes();
 
 <body>
   
-  <div class="container py-5">
+  <div class="container py-0">
     <h1 class="text-center mb-4">CATÉGORIES POPULAIRES</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-5">
       <?php foreach ($categories as $category) : ?>
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-70">
             <a href="plats.php?category_id=<?= $category['id']; ?>">
               <img src="img/<?= $category['image']; ?>" class="card-img-top" alt="<?= $category['libelle']; ?>">
               <div class="card-img-overlay text-center">
@@ -42,11 +42,11 @@ $bestSellingDishes = $dao->getBestSellingDishes();
     </div>
 
     <h1 class="text-center mt-5 mb-4">PLUS VENDUS PLATS</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-8">
+    <div class="row row-cols-1 row-cols-md-3 g-5">
       <?php foreach ($bestSellingDishes as $dish) : ?>
         <div class="col">
-          <div class="card h-80">
-            <a href="plats.php">
+        <div class="card h-80">
+           <a href="plats.php">
               <img src="img/<?= $dish['image']; ?>" class="card-img-top" alt="<?= $dish['libelle']; ?>">
               <div class="card-img-overlay text-center">
                 <h5 class="card-title"><?= $dish['libelle']; ?></h5>
@@ -58,10 +58,19 @@ $bestSellingDishes = $dao->getBestSellingDishes();
     </div>
 
    <!-- Add a search form -->
-   <form action="searchbar.php" method="get" class="ongletrecherche">
-  <input type="search" name="query" placeholder="Rechercher...">
+ <!-- Add a search form -->
+<form action="searchbar.php" method="get" class="ongletrecherche">
+  <input type="search" name="q" placeholder="Rechercher...">
   <button type="submit">Rechercher</button>
 </form>
+
+<!-- Add a container for search results -->
+<section id="search-results-container">
+  <h2 class="text-center mb-4">Résultats de recherche</h2>
+  <div id="search-results">
+    <!-- The search results will be displayed here -->
+  </div>
+</section>
     <!-- Add a container for search results -->
     <!-- <section id="search-results-container">
       <h2 class="text-center mb-4">Résultats de recherche</h2>

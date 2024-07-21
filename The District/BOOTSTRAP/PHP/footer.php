@@ -1,9 +1,16 @@
 <!-- <nav id="navbot" class="navbar navbar-expand navbar-dark mt-0 rounded-pill rounded-xs-none"> -->
-  
- <footer class=" text-center " style="background-color:#ff8c00 ;"> <!--rounded-pill-->
+
+<footer class=" text-center " style="background-color:#ff8c00 ;"> <!--rounded-pill-->
     <div class="container">
         <div class="row">
             <div class="col-md-12 p-0">
+            <!-- <div class="footer-bottom"> -->
+            <div class="info-links">
+                    <a href="../PHP/Mentions_légales.php">Mentions légales</a>
+                    <a href="../PHP/Politique_confidentialité.php">Politique confidentialité</a>
+                    </div>
+                    <!-- </div> -->
+                    
                 <a href="#" class="btn btn-social text-white btn-Whatsapp">
                     <img src="../platscategorieimag/socail icons/whatsapp.png" alt="whatspp">
                 </a>
@@ -19,10 +26,11 @@
                 <a href="#" class="btn btn-social text-white btn-Whatsapp">
                     <img src="../platscategorieimag/socail icons/youtube.png" alt="youtube">
                 </a>
+               
+                </div>
             </div>
         </div>
-    </div>
-</footer> 
+</footer>
 
 
 

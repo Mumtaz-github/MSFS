@@ -78,7 +78,7 @@ try {
         </div>
         <div class="image-container">
             <?php if ($_SERVER['REQUEST_URI'] != "/PHP/Commande.php") { ?>
-                <div class="card no-hover" style="background-color:black;">
+                
                     <video id="video" class="col-12" src="../IMG/mixk.mp4" style="width: 100%; height: 40vh;" playsinline autoplay loop muted></video>
                 </div>
             <?php } ?>

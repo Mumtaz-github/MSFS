@@ -97,38 +97,62 @@ public function getCategoryById($id) {
         $stmt->execute();
         return $stmt->fetch();
     }
-
-
-
     public function searchAllTables($searchQuery) {
         $results = array();
         $tables = array(
-            'plat' => array('libelle', 'description', 'prix', 'id_categorie'),
-            'commande' => array('quantite', 'id_plat', 'total', 'date_commande', 'nom_client'),
-            // 'utilisateur' => array('nom', 'prenom', 'email'),
-            'categorie' => array('libelle', 'id', 'active')
+          'plat' => array('libelle', 'description', 'prix', 'id_categorie'),
         );
-        
+      
         foreach ($tables as $table => $columns) {
-            $sql = "SELECT * FROM $table WHERE ";
-            $params = array();
-            foreach ($columns as $i => $column) {
-                $sql.= "$column LIKE? ";
-                $params[] = "%$searchQuery%";
-                if ($i < count($columns) - 1) {
-                    $sql.= " OR "; // use OR instead of AND
-                }
+          $sql = "SELECT * FROM $table WHERE ";
+          $params = array();
+          foreach ($columns as $i => $column) {
+            $sql.= "$column LIKE? ";
+            $params[] = "%$searchQuery%";
+            if ($i < count($columns) - 1) {
+              $sql.= " OR "; // use OR instead of AND
             }
-            $stmt = $this->conn->prepare($sql);
-            foreach ($params as $i => $param) {
-                $stmt->bindParam($i + 1, $param, PDO::PARAM_STR);
-            }
-            $stmt->execute();
-            $results[$table] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          }
+          $stmt = $this->conn->prepare($sql);
+          foreach ($params as $i => $param) {
+            $stmt->bindParam($i + 1, $param, PDO::PARAM_STR);
+          }
+          $stmt->execute();
+          $results[$table] = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         return $results;
+      }
     }
-}
+
+//     public function searchAllTables($searchQuery) {
+//         $results = array();
+//         $tables = array(
+//             'plat' => array('libelle', 'description', 'prix', 'id_categorie'),
+//             'commande' => array('quantite', 'id_plat', 'total', 'date_commande', 'nom_client'),
+//             // 'utilisateur' => array('nom', 'prenom', 'email'),
+//             'categorie' => array('libelle', 'id', 'active')
+//         );
+        
+//         foreach ($tables as $table => $columns) {
+//             $sql = "SELECT * FROM $table WHERE ";
+//             $params = array();
+//             foreach ($columns as $i => $column) {
+//                 $sql.= "$column LIKE? ";
+//                 $params[] = "%$searchQuery%";
+//                 if ($i < count($columns) - 1) {
+//                     $sql.= " OR "; // use OR instead of AND
+//                 }
+//             }
+//             $stmt = $this->conn->prepare($sql);
+//             foreach ($params as $i => $param) {
+//                 $stmt->bindParam($i + 1, $param, PDO::PARAM_STR);
+//             }
+//             $stmt->execute();
+//             $results[$table] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//         }
+//         return $results;
+//     }
+// }
     
     
     

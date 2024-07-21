@@ -100,20 +100,20 @@ body, html {
 }
 
 
-.parallax {
+/*.parallax {
   /* The image used */
-  background-image: url("../IMG/photo.avif");
+ /* background-image: url("../IMG/photo.avif");*/
 
   /* Full height */
   /*height:1772px;*/
-  height:1860px;
+ /* height:1860px;*/
 
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 /* accueil images border radius */
 .card{             

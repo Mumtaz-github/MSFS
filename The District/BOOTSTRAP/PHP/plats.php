@@ -49,10 +49,10 @@ if (isset($_GET['category_id'])) {
         for ($i = 0; $i < $numSlides; $i++) :
         ?>
           <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
-            <div class="row row-cols-1 row-cols-md-2 g-4 custom-card ">
+            <div class="row row-cols-1 row-cols-md-2 g-6 custom-card ">
               <?php foreach (array_slice($dishes, $i * 2, 2) as $dish) : ?>
                 <div class="col">
-                  <div class="card h-100">
+                  <div class="card h-80">
                     <a href="plats.php?id=<?= $dish['id']; ?>">
                       <img src="img/<?= $dish['image']; ?>" class="card-img-top" alt="<?= $dish['libelle']; ?>">
                     </a>
@@ -61,7 +61,7 @@ if (isset($_GET['category_id'])) {
                       <h5 class="card-title"><?= $dish['libelle']; ?></h5>
                       <p class="card-text"><?= $dish['description']; ?></p>
                       <p class="card-text">Prix: <?= $dish['prix']; ?> €</p>
-                      <a href="../PHP/Commande.php?id=<?= $dish['id']; ?>" class="btn btn-dark btn-lg rounded-pill ">Commander</a>
+                      <a href="../PHP/Commande.php?id=<?= $dish['id']; ?>" class="btn btn-dark btn-lg rounded-pill " id="pla">Commander</a>
                     </div>
                   </div>
                 </div>
