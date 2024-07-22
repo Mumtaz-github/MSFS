@@ -1,6 +1,7 @@
 <?php
+require_once('header.php');
 ?>
-
+<?php $showVideo = false;?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -44,3 +45,4 @@
     </div>
 </body>
 </html>
+<?php require_once('../PHP/footer.php') ?>

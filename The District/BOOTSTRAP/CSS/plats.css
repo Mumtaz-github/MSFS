@@ -63,21 +63,43 @@ video {
 
 
     
-
-/*c pour cards de tous les plats comme asiatique,burger,pasta etc*/
-   .card-img-top{
-    border-radius: 50px;
-    /* height: 260px;  
-    padding: 2px; */
-/*here it removed the page accueil categories border and increased size*/
-   }  
-
+.card-img-top{
+    border-radius: 50px; 
+      /* height: 200px;
+      width: 200px;    */
+    padding: 0px;
   
+ }
+/*for plats.php page cards*/
+ .dish-img-top{
+  width: 200px; /* or any other size you want */
+  height: 284px; /* or any other size you want */
+  object-fit: cover; /* to maintain the aspect ratio */
+  border-radius: 40px;
+}
+
+
+
+ /*for plats.php page cards*/
+ .command-button-custom {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+ 
+
+
+   .custom-card {
+    max-width: 70%; /* set a maximum width for the custom card */
+    margin:  auto; /* center the custom card horizontally */
+    padding: 20px;
+  }
 
 
 /*tous les pages sauf accueil*/
   body {
      background-image: url("../IMG/phot.avif");
+    
    }
 
 
@@ -106,7 +128,6 @@ video {
    
 
    
-   
   
   
    
@@ -123,7 +144,7 @@ cursor: pointer;
 font-size:15px;
 border-radius: 100px;
 transition: .1s;
-width:140px;
+width:147px;
 vertical-align: middle;
       
   }
@@ -205,20 +226,17 @@ footer {
 
 footer .btn-social {
   margin: 0px;
-  width: calc(10% - 20px);
+  width: calc(8% - 25px);
 } 
 
 
 /*carousel hide the cards , this is make the card visible*/
   .carousel-inner {
     overflow: visible;
+  
   }
 
-  .custom-card {
-    max-width: 900px; /* set a maximum width for the custom card */
-    margin:  auto; /* center the custom card horizontally */
-    padding: 20px;
-  }
+ 
 
 
   .info-links {

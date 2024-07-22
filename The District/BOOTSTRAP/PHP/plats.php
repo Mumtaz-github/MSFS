@@ -1,4 +1,6 @@
+<?php $showVideo = true;?>
 <?php
+
 require_once('header.php');
 //require_once('database.php');
 require_once('DAO.php');
@@ -22,13 +24,7 @@ if (isset($_GET['category_id'])) {
   // Get 6 dishes from database district
   $dishes = $dao->getSixDishes();
 }
- 
-
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,27 +37,26 @@ if (isset($_GET['category_id'])) {
 </head>
 
 <body>
-  <div class="container py-2">
+  <div class="container py-0">
     <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
-      <div class="carousel-inner">
+      <div class="carousel-inner mb-5 mt-5">  <!--mb mean margin bottom and mt mean margin top-->
         <?php
         $numSlides = ceil(count($dishes) / 2);
         for ($i = 0; $i < $numSlides; $i++) :
         ?>
           <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
-            <div class="row row-cols-1 row-cols-md-2 g-6 custom-card ">
+            <div class="row row-cols-1 row-cols-md-2 g-5"> 
               <?php foreach (array_slice($dishes, $i * 2, 2) as $dish) : ?>
                 <div class="col">
-                  <div class="card h-80">
+                  <div class="card flex-row" style="height: 300px;">
                     <a href="plats.php?id=<?= $dish['id']; ?>">
-                      <img src="img/<?= $dish['image']; ?>" class="card-img-top" alt="<?= $dish['libelle']; ?>">
+                      <img src="img/<?= $dish['image']; ?>" class="dish-img-top" alt="<?= $dish['libelle']; ?>">
                     </a>
-
                     <div class="card-body">
                       <h5 class="card-title"><?= $dish['libelle']; ?></h5>
                       <p class="card-text"><?= $dish['description']; ?></p>
                       <p class="card-text">Prix: <?= $dish['prix']; ?> €</p>
-                      <a href="../PHP/Commande.php?id=<?= $dish['id']; ?>" class="btn btn-dark btn-lg rounded-pill " id="pla">Commander</a>
+                      <a href="../PHP/Commande.php?id=<?= $dish['id']; ?>" class="btn btn-dark btn-lg rounded-pill command-button-custom" id="pla">Commander</a>
                     </div>
                   </div>
                 </div>
@@ -70,7 +65,6 @@ if (isset($_GET['category_id'])) {
           </div>
         <?php endfor; ?>
       </div>
-
       <!-- Carousel controls -->
       <div class="container-fluid mt-2 mb-2">
         <div class="col">
@@ -86,10 +80,12 @@ if (isset($_GET['category_id'])) {
           </div>
         </div>
       </div>
+    </div>
+ 
 
-      <!-- ****************************socail media icons***************************-->
-      <?php require_once('../PHP/footer.php') ?>
-
-      <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-      <script src="../JAVASCRIPT/searchbar.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1
+  <!-- ****************************socail media icons***************************-->
+  <?php require_once('../PHP/footer.php') ?>
+  <script src="../JAVASCRIPT/categplats.JS"></script>
+  <script src="../JAVASCRIPT/searchbar.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1

@@ -1,4 +1,5 @@
 <?php
+
 require_once('database.php'); // Include the database.php file
 require_once('DAO.php');
 
@@ -16,7 +17,7 @@ $dish = getDishDetails($id);
        // display the dish image
        $dishImage = $dish['image'];
        ?>
-
+<?php $showVideo = false;?> <!--this one to stop video of header on page commande-->
 
 <!-- // require_once('database.php'); // Include the database.php file
 // require_once('DAO.php');

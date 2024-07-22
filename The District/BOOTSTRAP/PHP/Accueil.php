@@ -1,5 +1,5 @@
 
-
+<?php $showVideo = true;?>
 <?php
 require_once('header.php');
 require_once('database.php');
@@ -66,7 +66,7 @@ $bestSellingDishes = $dao->getBestSellingDishes();
 
 <!-- Add a container for search results -->
 <section id="search-results-container">
-  <h2 class="text-center mb-4">Résultats de recherche</h2>
+  <h2 class="text-center mb-4"></h2>
   <div id="search-results">
     <!-- The search results will be displayed here -->
   </div>
