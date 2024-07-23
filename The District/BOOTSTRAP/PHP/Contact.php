@@ -1,6 +1,7 @@
 <?php
 require_once 'mail.php';
 ?>
+<?php $showVideo = true; ?> <!--this one to stop video of header on page commande and contact, true to display and false undisplay-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +28,7 @@ require_once 'mail.php';
         <div class="col-md-8 offset-md-2">
         <div class="form-group">
                 <label for="a" class="form-label float-right">Nom</label>
-                <input type="text" name="Nom" class="form-control" id="a" style="background-color: rgb(174, 214, 236);">
+                <input type="text" name="NomPrenom" class="form-control" id="a" style="background-color: rgb(174, 214, 236);">
                 <span>ce champ est obligatoire</span>
             </div>
             </div>

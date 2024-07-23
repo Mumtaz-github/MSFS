@@ -34,29 +34,29 @@ $dishImage = $dish['image'];
 </head>
 <?php require_once('../PHP/header.php') ?>
 
-
+<!--line form and next input can be place above the container line but broke html input boxes-->
 <div class="container mt-5 p-5 plats-container" style="justify-content: center;">
-<form id="formule" class="row g-3" action="mail.php" method="post"> <!--i replace  mail.php to Commandeformulaire.php to send email to mailhog not Commandeformularie.php-->
-<input type="hidden" name="libelle" value="<?php echo $dish['libelle']; ?>">
-  <div class="card mb-5 text-center mx-auto p-2" style="max-width: 802px; background-color:#ff8c00">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="img/<?= $dishImage; ?>" class="img-fluid" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h4 class="card-title"><?= $dish['libelle']; ?></h4>
-          <p class="card-text"><?= $dish['description']; ?></p>
-          <div class="d-flex justify-content-end mt-auto p-4">
-            <label> Quantité:</label>
-            <input type="number" name="quantite" id="number" style="width: 15%;" min="0" max="50" value="1">
-            <input type="hidden" name="prixUnitaire" id="prix" value="<?= $dish['prix']; ?>">
-            <span id="totalChamp">Total : <?= $dish['prix']; ?> €</span>
+  <form id="formule" class="row g-3" action="mail.php" method="post"> <!--i replace  mail.php to Commandeformulaire.php to send email to mailhog not Commandeformularie.php-->
+    <input type="hidden" name="libelle" value="<?php echo $dish['libelle']; ?>">
+    <div class="card mb-5 text-center mx-auto p-2" style="max-width: 802px; background-color:#ff8c00">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img/<?= $dishImage; ?>" class="img-fluid" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h4 class="card-title"><?= $dish['libelle']; ?></h4>
+            <p class="card-text"><?= $dish['description']; ?></p>
+            <div class="d-flex justify-content-end mt-auto p-4">
+              <label> Quantité:</label>
+              <input type="number" name="quantite" id="number" style="width: 15%;" min="0" max="50" value="1">
+              <input type="hidden" name="prixUnitaire" id="prix" value="<?= $dish['prix']; ?>">
+              <span id="totalChamp">Total : <?= $dish['prix']; ?> €</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
     <div class="col-md-8 offset-md-2">
       <div class="form-group">
         <label for="i" class="form-label float-right">Nom et Prénom</label>
@@ -69,7 +69,7 @@ $dishImage = $dish['image'];
     <div class="col-md-8 offset-md-2">
       <div class="form-group">
         <label for="j" class="form-label float-right">Email</label>
-        <input type="email" name="email" class="form-control" id="email"  style="background-color: rgb(174, 214, 236);">
+        <input type="email" name="email" class="form-control" id="email" style="background-color: rgb(174, 214, 236);">
         <span>ce champ est obligatoire</span> <!--id="j"-->
       </div>
     </div>
