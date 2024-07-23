@@ -19,15 +19,15 @@ $itemsPerSlide = 3;
 $numSlides = ceil(count($categories) / $itemsPerSlide);
 
 ?>
-<!-- <!DOCTYPE html>
+ <!-- <!DOCTYPE html>
 <html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catégories</title>
-  <link rel="stylesheet" href=" ../CSS/style.css">
-</head> -->
+  <link rel="stylesheet" href=" ../CSS/.css">
+</head>  -->
 
 <body>
   <div class="container py-2 plats-container"> <!--plats-container for css zooming cards-->

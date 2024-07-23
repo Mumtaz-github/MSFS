@@ -37,7 +37,7 @@ if (isset($_GET['category_id'])) {
 </head>
 
 <body>
-  <div class="container py-0   ">
+  <div class="container py-0">
     <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
       <div class="carousel-inner mb-5 mt-5">  <!--mb mean margin bottom and mt mean margin top-->
         <?php
@@ -48,7 +48,7 @@ if (isset($_GET['category_id'])) {
             <div class="row row-cols-1 row-cols-md-2 g-5"> 
               <?php foreach (array_slice($dishes, $i * 2, 2) as $dish) : ?>
                 <div class="col">
-                  <div class="card flex-row" style="height: 300px;">
+                  <div class="card flex-row" style="height: 300px;"> <!--plats-card added for css-->
                     <a href="plats.php?id=<?= $dish['id']; ?>">
                       <img src="img/<?= $dish['image']; ?>" class="dish-img-top" alt="<?= $dish['libelle']; ?>">
                     </a>
