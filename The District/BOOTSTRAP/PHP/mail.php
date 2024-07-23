@@ -57,7 +57,7 @@ if ($mail){
 
 
      <?php
-     echo "Mail.php file executed";
+     //echo "Mail.php file executed"; this one for test that phpmailer work or not
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 error_reporting(E_ALL);

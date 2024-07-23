@@ -34,9 +34,10 @@ $dishImage = $dish['image'];
 </head>
 <?php require_once('../PHP/header.php') ?>
 
+
+<div class="container mt-5 p-5 plats-container" style="justify-content: center;">
 <form id="formule" class="row g-3" action="mail.php" method="post"> <!--i replace  mail.php to Commandeformulaire.php to send email to mailhog not Commandeformularie.php-->
 <input type="hidden" name="libelle" value="<?php echo $dish['libelle']; ?>">
-<div class="container mt-5 p-5 plats-container" style="justify-content: center;">
   <div class="card mb-5 text-center mx-auto p-2" style="max-width: 802px; background-color:#ff8c00">
     <div class="row g-0">
       <div class="col-md-4">
