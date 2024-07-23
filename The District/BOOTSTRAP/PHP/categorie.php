@@ -30,7 +30,7 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
 </head> -->
 
 <body>
-  <div class="container py-2">
+  <div class="container py-2 plats-container"> <!--plats-container for css zooming cards-->
     <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
       <div class="carousel-inner mb-5 mt-4"> <!--mb mean margin bottom and mt mean margin top-->
 

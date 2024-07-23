@@ -37,7 +37,7 @@ if (isset($_GET['category_id'])) {
 </head>
 
 <body>
-  <div class="container py-0">
+  <div class="container py-0   ">
     <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
       <div class="carousel-inner mb-5 mt-5">  <!--mb mean margin bottom and mt mean margin top-->
         <?php

@@ -3,6 +3,7 @@
 
 
 <?php
+
 // Get current date and time
 $dateTime = new DateTime();
 $formattedDateTime = $dateTime->format('Y-m-d-H-i-s');

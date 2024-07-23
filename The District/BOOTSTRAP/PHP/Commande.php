@@ -2,41 +2,23 @@
 
 require_once('database.php'); // Include the database.php file
 require_once('DAO.php');
+require_once 'mail.php';
 
-
-function getDishDetails($id) {
-    $dao = new DAO($GLOBALS['conn']);
-    return $dao->getDishById($id);
+function getDishDetails($id)
+{
+  $dao = new DAO($GLOBALS['conn']);
+  return $dao->getDishById($id);
 }
 $id = $_GET['id']; // Validate and sanitize this input
 $dish = getDishDetails($id);
 
 $id = $_GET['id']; // Validate and sanitize this input
 $dish = getDishDetails($id);
-       
-       // display the dish image
-       $dishImage = $dish['image'];
-       ?>
-<?php $showVideo = false;?> <!--this one to stop video of header on page commande-->
 
-<!-- // require_once('database.php'); // Include the database.php file
-// require_once('DAO.php');
-
-
-// function getDishDetails($id) {
-//     $dao = new DAO($GLOBALS['conn']);
-//     return $dao->getDishById($id);
-// }
-// $id = $_GET['id']; // Validate and sanitize this input
-// $dish = getDishDetails($id);
-
-// $id = $_GET['id']; // Validate and sanitize this input
-// $dish = getDishDetails($id);
-       
-//        // display the dish image
-//        $dishImage = $dish['image'];
-//        ?> -->
-       
+// display the dish image
+$dishImage = $dish['image'];
+?>
+<?php $showVideo = false; ?> <!--this one to stop video of header on page commande-->
 
 
 
@@ -44,36 +26,36 @@ $dish = getDishDetails($id);
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commande</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/plats.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commande</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../CSS/plats.css">
 </head>
-    <?php require_once('../PHP/header.php')?>
+<?php require_once('../PHP/header.php') ?>
 
-    <div class="container mt-5 p-5" style="justify-content: center;">
-        <div class="card mb-5 text-center mx-auto p-2" style="max-width: 802px; background-color:#ff8c00">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="img/<?= $dishImage;?>" class="img-fluid" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h4 class="card-title"><?= $dish['libelle'];?></h4>
-                        <p class="card-text"><?= $dish['description'];?></p>
-                        <div class="d-flex justify-content-end mt-auto p-4">
-                            <label> Quantité:</label>
-                            <input type="number" id="number" style="width: 15%;" min="0" max="50" value="1">
-                            <input type="hidden" id="prix" value="<?= $dish['prix'];?>"> 
-                            <span id="totalChamp">Total : <?= $dish['prix'];?> €</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<form id="formule" class="row g-3" action="mail.php" method="post"> <!--i replace  mail.php to Commandeformulaire.php to send email to mailhog not Commandeformularie.php-->
+<input type="hidden" name="libelle" value="<?php echo $dish['libelle']; ?>">
+<div class="container mt-5 p-5 plats-container" style="justify-content: center;">
+  <div class="card mb-5 text-center mx-auto p-2" style="max-width: 802px; background-color:#ff8c00">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="img/<?= $dishImage; ?>" class="img-fluid" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title"><?= $dish['libelle']; ?></h4>
+          <p class="card-text"><?= $dish['description']; ?></p>
+          <div class="d-flex justify-content-end mt-auto p-4">
+            <label> Quantité:</label>
+            <input type="number" name="quantite" id="number" style="width: 15%;" min="0" max="50" value="1">
+            <input type="hidden" name="prixUnitaire" id="prix" value="<?= $dish['prix']; ?>">
+            <span id="totalChamp">Total : <?= $dish['prix']; ?> €</span>
+          </div>
         </div>
-       
-  <form id="formule" class="row g-3" action="Commandeformularie.php" method="post">
+      </div>
+    </div>
+  </div>
     <div class="col-md-8 offset-md-2">
       <div class="form-group">
         <label for="i" class="form-label float-right">Nom et Prénom</label>
@@ -81,13 +63,13 @@ $dish = getDishDetails($id);
         <span>ce champ est obligatoire</span>
       </div>
     </div>
-    <br> 
+    <br>
     <br><!-- added break line -->
     <div class="col-md-8 offset-md-2">
       <div class="form-group">
         <label for="j" class="form-label float-right">Email</label>
-        <input type="email" name="email" class="form-control" id="j" style="background-color: rgb(174, 214, 236);">
-        <span>ce champ est obligatoire</span>
+        <input type="email" name="email" class="form-control" id="email"  style="background-color: rgb(174, 214, 236);">
+        <span>ce champ est obligatoire</span> <!--id="j"-->
       </div>
     </div>
     <br>
@@ -116,12 +98,11 @@ $dish = getDishDetails($id);
     <input type="hidden" id="total" name="total">
   </form>
 </div>
-    <?php require_once('footer.php')?>
+<?php require_once('footer.php') ?>
 
-    <script src="../JAVASCRIPT/searchbar.js"></script>
-    <script src="../JAVASCRIPT/commande.js"></script>
-    <script src="../JAVASCRIPT/categplats.JS"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  
+<!-- <script src="../JAVASCRIPT/searchbar.js"></script> -->
+<script src="../JAVASCRIPT/commande.js"></script>
+<script src="../JAVASCRIPT/categplats.JS"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -24,7 +24,8 @@ $bestSellingDishes = $dao->getBestSellingDishes();
 
 <body>
   
-  <div class="container py-0">
+  <div class="container py-0 plats-container">  <!--plats-container this is added for css that those pages,
+     who have this the css transition or hover or zooming will apply-->
     <h1 class="text-center mb-4">CATÉGORIES POPULAIRES</h1>
     <div class="row row-cols-1 row-cols-md-3 g-5">
       <?php foreach ($categories as $category) : ?>

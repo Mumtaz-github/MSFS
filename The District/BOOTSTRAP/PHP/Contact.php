@@ -1,3 +1,7 @@
+<?php
+require_once 'mail.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +16,14 @@
 
 <body>
     <?php require_once('../PHP/header.php') ?>
+    
     <!-- <img class="imagedefond img-fluid" src="../IMG/bg2.jpeg" height="10px" width="100%" position="relative:"> -->
     <!--<video id="video" class="mx-auto" src="../IMG/video.mp4" style="width: 100%; height: 35vh;" playsinline autoplay
             loop muted></video>-->
             <div class="container mt-5 p-5" style="justify-content: center;">
        
             
-        <form class="row g-3" id="formulaire" action="Contactformularie.php" method="post">
+        <form class="row g-3" id="formulaire" action="mail.php" method="post">
         <div class="col-md-8 offset-md-2">
         <div class="form-group">
                 <label for="a" class="form-label float-right">Nom</label>

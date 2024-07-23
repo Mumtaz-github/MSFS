@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded',function (){
   
     valide=true
    i=document.getElementById("i").value; //nome et prenom
-   j=document.getElementById("j").value;   //email
+   j=document.getElementById("email").value;   //email
    k=document.getElementById("k").value;  //phonenumber
    l=document.getElementById("l").value;   //textarea
 
