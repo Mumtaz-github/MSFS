@@ -124,19 +124,19 @@
 
 
  /*this is for footer*/
-  footer {
+  /* footer {
    background-color: #ff8c00;
-   padding: 10;
+   padding: 0;
    margin: 10;
-   width:90%;
-   height: 60px;
-   left: 40px;
-   right: 30px;
-    position: absolute; 
-    display: flex; 
-   justify-content: space-between;
-   align-items: center;
- } 
+   width:60%;
+   height: 70px;
+   left:130px;
+   right: 0px;
+     position: absolute; 
+     display: flex;   
+   /* justify-content: space-between; */
+   /* align-items: center;
+ }  */ */ */
 
 
 
@@ -145,7 +145,7 @@
 
  footer .btn-social {
    margin: 0px;
-   width: calc(8% - 25px);
+   /* width: calc(5% - 0px); */
  }
 
 
@@ -186,7 +186,7 @@
  }
 
 
- .info-links {
+/*  .info-links {
    display: flex;
    justify-content: space-between;
    margin-bottom: 0px;
@@ -199,7 +199,7 @@
 
  .info-link-right {
    margin-left: 20px;
- }
+ } */
 
 
 
@@ -209,6 +209,16 @@
    font-size: 25px;
    font-weight: bolder;
  }
+ 
+
+
+
+
+
+
+
+
+
 
 
 

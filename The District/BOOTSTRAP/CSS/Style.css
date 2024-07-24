@@ -120,9 +120,9 @@ background-color: #ff8c00;
 /* text on top of navbar like accuel,categorie etc*/
 .topnav-centered{
   float: none;
-  position: absolute;
+  /* position: absolute; */
   top: 19%;
-  left: 27%;
+  /* left: 10%; */
  
 
   

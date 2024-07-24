@@ -81,7 +81,7 @@ if (isset($_GET['category_id'])) {
         </div>
       </div>
     </div>
- 
+    </div>
 
   <!-- ****************************socail media icons***************************-->
   <?php require_once('../PHP/footer.php') ?>
