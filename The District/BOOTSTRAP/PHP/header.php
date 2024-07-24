@@ -57,7 +57,7 @@ try {
                                                             } ?> espace" href="Accueil.php">ACCUEIL</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if (in_array($currentFile, ["categorie.php", "Asiatique.php", "Burger.php", "Pasta.php", "Pizza.php", "Salade.php", "Sandwich.php", "Veggie.php", "Wrap.php"])) {
+                                <a class="nav-link mx-md-4 <?php if (in_array($currentFile, ["categorie.php", "Wrap.php"])) {
                                                                 echo "active";
                                                             } ?> espace " href="categorie.php">CATEGORIE</a>
                             </li>
