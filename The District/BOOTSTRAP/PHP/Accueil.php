@@ -25,7 +25,7 @@ $bestSellingDishes = $dao->getBestSellingDishes();
 <body>
   
   <div class="container py-0 ">  
-    <h1 class="text-center mb-4">CATÉGORIES POPULAIRES</h1>
+    <h1 class="text-center mb-4">CATÉGORIES POPULAIRES</h1> <!--parite 6 plats-->
     <div class="row row-cols-1 row-cols-md-3 g-5">
       <?php foreach ($categories as $category) : ?>
         <div class="col">
@@ -41,7 +41,7 @@ $bestSellingDishes = $dao->getBestSellingDishes();
       <?php endforeach; ?>
     </div>
 
-    <h1 class="text-center mt-5 mb-4">PLUS VENDUS PLATS</h1>
+    <h1 class="text-center mt-5 mb-4">PLUS VENDUS PLATS</h1> <!--partie 3 plats-->
     <div class="row row-cols-1 row-cols-md-3 g-5">
       <?php foreach ($bestSellingDishes as $dish) : ?>
         <div class="col">
