@@ -54,9 +54,9 @@ class DAO {
     }
     
     // Get 6 dishes from plat table
-    public function getSixDishes() {
+    public function getAllDishes() {
         // Requête SQL pour récupérer les 6 plats
-        $sql = "SELECT * FROM plat LIMIT 6";
+        $sql = "SELECT * FROM plat LIMIT 12"; //now i need 12 dishes
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

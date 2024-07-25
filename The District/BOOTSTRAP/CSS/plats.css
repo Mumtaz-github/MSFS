@@ -76,7 +76,7 @@
  }
 
  /* pour image de accueil animation */
- /* .card {
+  .card {
    transition: .6s ease;
  }
 
@@ -91,7 +91,7 @@
 
  .n-hover:hover {
    transform: none;
- } */
+ } 
 
 
 
@@ -211,21 +211,16 @@
  }
  
 
+body#mentions-legales-page {
+  background-image: none; /* or any other background style you prefer */
+ }
+ 
 
 
-
-
-
-
-
-
-
-
-
- /* nabar color,height for all pages except accueil */
+/* nabar color,height for all pages except accueil */
  .navbar {
    background-color: #ff8c00;
-   height: 120px;
+   height: 140px;
    /* border-width: 8%;
  border-style: inherit; */
  }
@@ -271,7 +266,7 @@
  /* search area on video  */
   .ongletrecherche{                            
   position: absolute;
-  top: 30%;
+  top: 33%;
   left: 44%;
   border-radius: 50px;
   transform:translate(-20%, -50%);
@@ -317,14 +312,14 @@
 
 
 
-
+/*if i active this work good but in responsive mode the navigation links shows on navbar*/
  /* accueil, categorie, plats,*/
- .topnav-centered {
-   float: none;
+ /* .bottomnav {
+    float: none; 
    position: absolute;
-   top: 19%;
+   top: 30%;
    left: 27%;
- }
+ } */
 
 
 

@@ -19,10 +19,10 @@ if (isset($_GET['category_id'])) {
 } elseif (isset($category_id)) { // added parentheses and isset check
   $dishes = $dao->getDishesByCategory($category_id);
   // Get 6 dishes from database district
-  $dishes = $dao->getSixDishes();
+  $dishes = $dao->getAllDishes();
 } else {
-  // Get 6 dishes from database district
-  $dishes = $dao->getSixDishes();
+  // Get 6 or all dishes from database district
+  $dishes = $dao->getAllDishes(); //to get 6 dishes getSixDishes
 }
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,8 @@ if (isset($_GET['category_id'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PLATS</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../CSS/plats.css">
 </head>
 

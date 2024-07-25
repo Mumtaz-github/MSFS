@@ -37,67 +37,66 @@ try {
 </head>
 
 <body>
-    <div class="parallax">
-        <div class="container-fluid g-1">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid justify-content-evenly">
-                    <img src="../IMG/img brand/logo_transparent.png" alt="logo" width="180">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 topnav-centered">
-                            <?php
-                            $currentFile = basename($_SERVER['REQUEST_URI']);
-                            ?>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../IMG/img brand/logo_transparent.png" alt="logo" width="170" height="145"> <!--logo image-->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent"> <!-- justify-content-center -->
+                <ul class="navbar-nav mb-2 mb-lg-0 bottomnav"> <!--if write bottomnav and add css then responsive mode the navigation links comes on the navbar-->
 
-                            <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if ($currentFile == "Accueil.php") {
-                                                                echo "active";
-                                                            } ?> espace" href="Accueil.php">ACCUEIL</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if (in_array($currentFile, ["categorie.php"])) {
-                                                                echo "active";
-                                                            } ?> espace " href="categorie.php">CATEGORIE</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if ($currentFile == "plats.php") {
-                                                                echo "active";
-                                                            } ?> espace " href="plats.php">PLATS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mx-md-4 <?php if ($currentFile == "Contact.php") {
-                                                                echo "active";
-                                                            } ?> espace " href="Contact.php">CONTACT</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+                    <?php
+                    $currentFile = basename($_SERVER['REQUEST_URI']); //this tage show that which page is active mean that on which page i am active
+                    ?>
+
+                    <li class="nav-item">
+                        <a class="nav-link mx-md-4 <?php if ($currentFile == "Accueil.php") {
+                                                        echo "active";
+                                                    } ?> espace" href="Accueil.php">ACCUEIL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-md-4 <?php if (in_array($currentFile, ["categorie.php"])) {
+                                                        echo "active";
+                                                    } ?> espace " href="categorie.php">CATEGORIE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-md-4 <?php if ($currentFile == "plats.php") {
+                                                        echo "active";
+                                                    } ?> espace " href="plats.php">PLATS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-md-4 <?php if ($currentFile == "Contact.php") {
+                                                        echo "active";
+                                                    } ?> espace " href="Contact.php">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="image-container">
+    </nav>
+<div class="image-container">
         <!-- < ?php if ($_SERVER['REQUEST_URI']!== "/PHP/Commande.php") {?> -->
-        <?php if ($showVideo) {?> <!--this is one is added on place the above to show video on certain pages-->
-                    <video id="video" class="col-12" src="../IMG/mixk.mp4" style="width: 100%; height: 40vh;" playsinline autoplay loop muted></video>
-                </div>
-            <?php } ?>
-            <?php if (basename($_SERVER['REQUEST_URI']) == "Accueil.php") { ?>
-                <!-- <div class="ongletrecherche">
+        <?php if ($showVideo) { ?> <!--this is one is added on place the above to show video on certain pages-->
+            <video id="video" class="col-12" src="../IMG/mixk.mp4" style="width: 100%; height: 40vh;" playsinline autoplay loop muted></video>
+    </div>
+<?php } ?>
+<?php if (basename($_SERVER['REQUEST_URI']) == "Accueil.php") { ?>
+    <!-- <div class="ongletrecherche">
                     <input class="form-control me rounded-pill" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </div> -->
+                </div> 
                 <!-- <div  class="ongletrecherche">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </div> -->
-<!-- header.php -->
-<!-- <div class="ongletrecherche">
+    <!-- header.php -->
+    <!-- <div class="ongletrecherche">
   <form action="search.php" method="get">
     <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </div> -->
 
-            <?php } ?>
-        </div>
+<?php } ?>

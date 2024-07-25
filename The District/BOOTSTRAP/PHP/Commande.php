@@ -50,14 +50,16 @@ $dishImage = $dish['image'];
             <div class="d-flex justify-content-end mt-auto p-4">
               <label> Quantité:</label>
               <input type="number" name="quantite" id="number" style="width: 15%;" min="0" max="50" value="1">
-              <input type="hidden" name="prixUnitaire" id="prix" value="<?= $dish['prix']; ?>">
+              <input type="hidden" name="prixUnitaire" id="prix" value="<?= $dish['prix']; ?>"> <!--hidden -->
+            </div>
+            <div class="d-flex justify-content-end mt-auto p-4">
               <span id="totalChamp">Total : <?= $dish['prix']; ?> €</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-12"> <!--offset-md-2-->
       <div class="form-group">
         <label for="i" class="form-label float-right">Nom et Prénom</label>
         <input type="text" name="NomPrenom" class="form-control" id="i" style="background-color: rgb(174, 214, 236);">
@@ -66,7 +68,7 @@ $dishImage = $dish['image'];
     </div>
     <br>
     <br><!-- added break line -->
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-6"><!--offset-md-2-->
       <div class="form-group">
         <label for="j" class="form-label float-right">Email</label>
         <input type="email" name="email" class="form-control" id="email" style="background-color: rgb(174, 214, 236);">
@@ -75,7 +77,7 @@ $dishImage = $dish['image'];
     </div>
     <br>
     <br> <!-- added break line -->
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-6"><!--offset-md-2-->
       <div class="form-group">
         <label for="k" class="form-label float-right">Phone Number</label>
         <input type="text" name="phone" class="form-control" id="k" style="background-color: rgb(174, 214, 236);">
@@ -84,7 +86,7 @@ $dishImage = $dish['image'];
     </div>
     <br>
     <br> <!-- added break line -->
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-12 "><!--offset-md-2-->
       <div class="form-group">
         <label for="l" class="form-label float-right">Votre Demande</label>
         <textarea name="demande" class="form-control" id="l" rows="3" style="background-color: rgb(174, 214, 236);"></textarea>
@@ -93,7 +95,7 @@ $dishImage = $dish['image'];
     </div>
     <br>
     <br> <!-- added break line -->
-    <div class="col-md-10">
+    <div class="col-md-12"><!--col-md-10"-->
       <button type="submit" class="btn rounded-pill btn-dark btn-sm float-end" id="commande">Envoyer</button>
     </div>
     <input type="hidden" id="total" name="total">
