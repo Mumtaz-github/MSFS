@@ -1,48 +1,42 @@
 <?php $showVideo = true;?>
 <?php
-require_once('header.php');
-//require_once('database.php');
+
+
+  require_once('header.php');
+ require_once('database.php');
 require_once('DAO.php');
-
-$dao = new DAO($conn);
-
-if (isset($_GET['q'])) {
-    $searchQuery = $_GET['q'];
-    $dishes = $dao->searchDishes($searchQuery);
-} elseif (isset($_GET['category_id'])) {
-    $category_id = $_GET['category_id'];
-    $dishes = $dao->getDishesByCategory($category_id);
-    echo 'on est là';
-} elseif (isset($category_id)) { 
-    $dishes = $dao->getDishesByCategory($category_id);
-} else {
-    $dishes = $dao->getAllDishes(); //to get 6 dishes getSixDishes
-}
-?>
-<!-- // require_once('header.php');
-// //require_once('database.php');
-// require_once('DAO.php');
 
 // this functions for to display clickable accueil and categorie pages images, 
 //also display plats.php 6 plats 
-// $dao = new DAO($conn);
+ $dao = new DAO($conn);
 
-// if (isset($_GET['category_id'])) {
+
+ if (isset($_GET['q'])) {
+  $searchQuery = $_GET['q'];
+  $dishes = $dao->search($searchQuery);
+} elseif (isset($_GET['category_id'])) {
+  $category_id = $_GET['category_id'];
+  $dishes = $dao->getDishesByCategory($category_id);
+} else {
+  $dishes = $dao->getAllDishes();
+}
+
+//  if (isset($_GET['category_id'])) {
 //   $category_id = $_GET['category_id'];
 
-  // Get dishes for the selected category/
-  // Get category ID from URL parameter
-  // $dishes = $dao->getDishesByCategory($category_id);
-//   echo 'on est là';
+//   // Get dishes for the selected category/
+//   // Get category ID from URL parameter
+//    $dishes = $dao->getDishesByCategory($category_id);
+  
 // } elseif (isset($category_id)) { // added parentheses and isset check
-//   $dishes = $dao->getDishesByCategory($category_id);
-  // Get 6 dishes from database district
+//    $dishes = $dao->getDishesByCategory($category_id);
+//   // Get 6 dishes from database district
 //   $dishes = $dao->getAllDishes();
-// } else {
-  // Get 6 or all dishes from database district
-  // $dishes = $dao->getAllDishes(); //to get 6 dishes getSixDishes
-// }
-// ? > -->
+//  } else {
+//   // Get 6 or all dishes from database district
+//  $dishes = $dao->getAllDishes(); //to get 6 dishes getSixDishes
+//  } 
+// ?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +60,8 @@ if (isset($_GET['q'])) {
         ?>
           <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
             <div class="row row-cols-1 row-cols-md-2 g-5"> 
-              <?php foreach (array_slice($dishes, $i * 2, 2) as $dish) : ?>
+              <!-- < ?php foreach (array_slice($dishes, $i * 2, 2) as $dish) : ?> -->
+                <?php foreach ($dishes as $dish):?>
                 <div class="col">
                   <div class="card flex-row plats-card-no-zoom" style="height: 300px;"> <!--plats-card-no-zoom added for css to out from card zooming of this page-->
                     <a href="plats.php?id=<?= $dish['id']; ?>">

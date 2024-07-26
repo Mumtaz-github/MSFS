@@ -11,16 +11,14 @@ class DAO {
         $this->conn = $conn;
     }
     
-/**for searchbar */
-public function searchDishes($searchQuery) {
-    $searchQuery = '%'. $searchQuery. '%'; // add wildcards for LIKE operator
-    $stmt = $this->conn->prepare("SELECT * FROM plat WHERE libelle LIKE :searchQuery OR description LIKE :searchQuery");
-    $stmt->bindParam(':searchQuery', $searchQuery);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-
+    public function search($searchQuery) {
+        $sql = "SELECT * FROM plat WHERE libelle LIKE :searchQuery OR description LIKE :searchQuery";
+        $stmt = $this->conn->prepare($sql);
+        $searchQueryParam = "%$searchQuery%";
+        $stmt->bindParam(':searchQuery', $searchQueryParam);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+      }
 
 
 
