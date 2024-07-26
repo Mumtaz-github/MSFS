@@ -59,18 +59,18 @@ $bestSellingDishes = $dao->getBestSellingDishes();
     </div>
    <!-- Add a search form -->
  <!-- Add a search form -->
-<form action="searchbar.php" method="get" class="ongletrecherche">
+<!-- <form action="searchbar.php" method="get" class="ongletrecherche">
   <input type="search" name="q" placeholder="Rechercher...">
   <button type="submit">Rechercher</button>
 </form>
 
-<!-- Add a container for search results -->
-<section id="search-results-container">
+<--Add a container for search results -->
+<!-- <section id="search-results-container">
   <h2 class="text-center mb-4"></h2>
-  <div id="search-results">
+  <div id="search-results"> -->
     <!-- The search results will be displayed here -->
-  </div>
-</section>
+  <!-- </div>
+</section> --> 
     <!-- Add a container for search results -->
     <!-- <section id="search-results-container">
       <h2 class="text-center mb-4">Résultats de recherche</h2>
@@ -78,6 +78,20 @@ $bestSellingDishes = $dao->getBestSellingDishes();
   The search results will be displayed here -->
       <!-- < /div>
     </section> --> 
+
+<!-- Add a search form -->
+<form class="ongletrecherche">
+    <input type="search" id="search-input" placeholder="Rechercher...">
+    <button type="submit">Rechercher</button>
+</form>
+
+<!-- Add a container for search results -->
+<section id="search-results-container">
+    <h2 class="text-center mb-4">Résultats de recherche</h2>
+    <div id="search-results">
+        <!-- The search results will be displayed here -->
+    </div>
+</section>
 
 
 

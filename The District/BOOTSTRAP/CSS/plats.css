@@ -12,7 +12,7 @@
  #pre,
  #tou,
  #tous,
- #pla {
+ #pla,#research {
    color: rgb(21, 244, 238);
    font-family: poppins;
    font-weight: 150;
@@ -33,6 +33,26 @@
      0 5px 50px 0 rgb(21, 244, 238) inset, 0 5px 50px 0 rgb(21, 244, 238);
    text-shadow: 0 0 5px rgb(21, 244, 238), 0 0 5px rgb(21, 244, 238);
  }
+
+/*searchbar.php buttons*/
+ .commande-btn {
+  font-size: 10px;
+  background-color: #333;
+  position: absolute;
+   bottom: 410px;
+   /* right: 10px; */
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
  /*  card formating page accueil-*/
@@ -121,6 +141,30 @@
    /* to maintain the aspect ratio */
    border-radius: 40px;
  }
+
+
+ /*zooming for all plats of page plats.php*/
+ #imgplat{
+  transition: .6s ease;
+}
+
+#imgplat:hover {
+  transform: scale(1.1);
+}
+
+.n-hover {
+  transition: none;
+  transform: none;
+}
+
+.n-hover:hover {
+  transform: none;
+} 
+
+
+
+
+
 
 
  /*this is for footer*/
@@ -277,8 +321,11 @@ body#mentions-legales-page {
 
 
 
-
-
+/*this is plats.php card, i disable zooming the cards in this page*/
+  .plats-card-no-zoom {
+    transform: none !important; /* disable zooming effect */
+    transition: none !important; /* disable transition effect */
+  }
 
 
 

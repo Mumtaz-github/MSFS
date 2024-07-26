@@ -11,6 +11,20 @@ class DAO {
         $this->conn = $conn;
     }
     
+/**for searchbar */
+public function searchDishes($searchQuery) {
+    $searchQuery = '%'. $searchQuery. '%'; // add wildcards for LIKE operator
+    $stmt = $this->conn->prepare("SELECT * FROM plat WHERE libelle LIKE :searchQuery OR description LIKE :searchQuery");
+    $stmt->bindParam(':searchQuery', $searchQuery);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+
+
+
+
 
     public function insertCommande($plat_id, $quantite, $total_prix) {
         $query = "INSERT INTO commande (plat_id, quantite, total_prix) VALUES (:plat_id, :quantite, :total_prix)";

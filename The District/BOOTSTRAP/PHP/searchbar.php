@@ -32,6 +32,9 @@ if (count($result) > 0) {
   <html>
   <head>
     <title>Résultats de recherche</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../CSS/plats.css">
     <style>
       .pizza-card {
         width: 550px;
@@ -45,7 +48,7 @@ if (count($result) > 0) {
       }
       .pizza-card img {
         width: 100%;
-        height: 250px;
+        height: 270px;
         object-fit: cover;
         border-radius: 10px 10px 0 0;
       }
@@ -56,11 +59,11 @@ if (count($result) > 0) {
       }
       h1{
         text-align: center;
-        font-size: 60px;
+        font-size: 40px;
       }
     </style>
   </head>
-  <body style="background-color: 	rgb(0,128,0);">
+  <body style="background-color: green;">
     <h1>Résultats de recherche pour "<?php echo $search_query;?>"</h1>
     <div class="search-results">
       <?php
@@ -71,7 +74,8 @@ if (count($result) > 0) {
           <h2><?php echo $row['libelle'];?></h2>
           <p><?php echo $row['description'];?></p>
           <p>Prix: <?php echo $row['prix'];?> €</p>
-        </div>
+          <button id="research" class="commande-btn btn-dark btn-lg rounded-pill command-button-custom-<?php echo $row['id'];?>" onclick="window.location.href='../PHP/Commande.php?id=<?php echo $row['id'];?>'">Commander</button>
+  </div>
         <?php
       }
       ?>
