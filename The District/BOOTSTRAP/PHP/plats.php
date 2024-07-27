@@ -60,8 +60,8 @@ require_once('DAO.php');
         ?>
           <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
             <div class="row row-cols-1 row-cols-md-2 g-5"> 
-              <!-- < ?php foreach (array_slice($dishes, $i * 2, 2) as $dish) : ?> -->
-                <?php foreach ($dishes as $dish):?>
+              <?php foreach (array_slice($dishes, $i * 2, 2) as $dish) : ?> <!--if i take this line in comment and below line sans comment , the plats page show all plats in vertical-->
+                <!-- < ?php foreach ($dishes as $dish):?> -->
                 <div class="col">
                   <div class="card flex-row plats-card-no-zoom" style="height: 300px;"> <!--plats-card-no-zoom added for css to out from card zooming of this page-->
                     <a href="plats.php?id=<?= $dish['id']; ?>">
@@ -78,7 +78,7 @@ require_once('DAO.php');
               <?php endforeach; ?>
             </div>
           </div>
-        <?php endfor; ?>
+          <?php endfor; ?>
       </div>
       <!-- Carousel controls -->
       <div class="container-fluid mt-2 mb-2">
@@ -97,11 +97,12 @@ require_once('DAO.php');
       </div>
     </div>
     </div>
+   
 
   <!-- ****************************socail media icons***************************-->
   <?php require_once('../PHP/footer.php') ?>
   <input id="search-input" type="text" />
-  <!-- <script src="../JAVASCRIPT/categplats.JS"></script> -->
+   <script src="../JAVASCRIPT/categplats.JS"></script> 
   <script src="../JAVASCRIPT/searchbar.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1

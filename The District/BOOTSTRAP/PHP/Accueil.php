@@ -11,6 +11,7 @@ $categories = $dao->getPopularCategories();
 $bestSellingDishes = $dao->getBestSellingDishes();
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +48,7 @@ $bestSellingDishes = $dao->getBestSellingDishes();
     <div class="row row-cols-1 row-cols-md-3 g-5">
       <?php foreach ($bestSellingDishes as $dish) : ?>
         <div class="col">
-        <div class="card h-80">
+        <div class="card">
            <a href="plats.php">
               <img src="img/<?= $dish['image']; ?>" class="card-img-top" alt="<?= $dish['libelle']; ?>">
               <div class="card-img-overlay text-center">
@@ -61,7 +62,7 @@ $bestSellingDishes = $dao->getBestSellingDishes();
     </div>
    <!-- Add a search form -->
  <!-- Add a search form -->
- <form action="plats.php" method="get" class="ongletrecherche">
+ <form action="plats.php" method="post" class="ongletrecherche">
   <input type="search" name="q" placeholder="Rechercher...">
   <button type="submit">Rechercher</button>
 </form>
