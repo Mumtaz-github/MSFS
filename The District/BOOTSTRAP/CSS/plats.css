@@ -352,6 +352,31 @@ body#mentions-legales-page {
   
  
 
+
+/*.parallax {
+  /* The image used */
+ /* background-image: url("../IMG/photo.avif");*/
+
+  /* Full height */
+  /*height:1772px;*/
+ /* height:1860px;*/
+
+  /* Create the parallax scrolling effect */
+  /* background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+
+
+
+
+
+
+
+
+
 /*pour page de commande text obligatoire*/
  span {
    color: rgb(245, 76, 76);
@@ -374,3 +399,71 @@ body#mentions-legales-page {
  video {
    object-fit: fill;
  }
+
+
+
+ /*
+.cards{
+  border-radius: 10px;
+ transform:all 0.8s ;
+
+ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+  rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+   rgba(0, 0, 0, 0.1) 0px -px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px,
+     rgba(0, 0, 0, 0.09) 0px 4px 2px,
+  rgba(0, 0, 0, 0.09) 0px 8px 4px,
+   rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.cards:hover{
+  transform: scale(1.15);
+}
+*/
+
+
+/* 
+.cards {
+  width: 300px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px var(--m-ombre);
+  -webkit-filter: grayscale(0) blur(0px);
+  filter: grayscale(0) blur(0px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.cards:hover {
+  width: 300px;
+  height: 300px;
+  -webkit-filter: grayscale(0) blur(0px);
+  filter: grayscale(0) blur(0px);
+  border-radius: 0%;
+  -webkit-transform: scale3d(1.2, 1.2, 1);
+  transform: scale3d(1.2, 1.2, 1);
+}
+ */
+
+ 
+/* 
+.navbar a:hover {
+  background: rgb(143, 41, 41);
+  color:orange ;
+}
+
+.navbar-toggler{
+  border: none;
+  font-size: 2.25rem;
+ } */
+
+
+ 
+
+/*this one is for socail icons between space*/
+
+footer .btn-social {
+  margin: 0px;
+  width: calc(10% - 20px);
+} 
