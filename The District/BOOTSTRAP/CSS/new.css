@@ -5,41 +5,18 @@
 
 } */
 
-/*page accueil 3 plats */
-.dis-img-top {
-    border-radius: 45px;
-     height: 270px;
-       width: 390px;    
-    padding: 0px;
- 
-  }
   .card-body {
     border: 0px;
     background-color: #ff8c00;
-    border-radius: 50px;
+    border-radius: 45px;
     margin: 0px;
     padding: 0px;
   }
 
-  
+
 
  .carousel-inner {
     /* overflow: -moz-hidden-unscrollable; */
      overflow:visible; 
   }
 
-  
-.parallax {
-  /* The image used */
-  background-image: url("../IMG/photo.avif");
-
-  /* Full height */
-  height:1772px;
- height:1860px;
-
-  /* Create the parallax scrolling effect */
-   background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} 
