@@ -21,12 +21,14 @@ class DAO {
     //   }
 
     public function search($searchQuery) {
-      $sql = "SELECT * FROM plat WHERE libelle LIKE :searchQuery OR description LIKE :searchQuery";
-      $stmt = $this->conn->prepare($sql);
-      $stmt->bindParam(':searchQuery', $searchQuery, PDO::PARAM_STR);
-      $stmt->execute();
-      return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
+   $sql = "SELECT * FROM plat WHERE libelle LIKE :searchQuery";
+    $stmt = $this->conn->prepare($sql);
+     $stmt->bindParam(':searchQuery', $searchQuery);
+     $stmt->execute();
+   $results = $stmt->fetchAll();
+    return $results;
+    
+    }
 
 
 

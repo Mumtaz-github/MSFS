@@ -10,8 +10,6 @@ $dao = new DAO($conn);
 $categories = $dao->getPopularCategories();
 $bestSellingDishes = $dao->getBestSellingDishes();
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -25,18 +23,18 @@ $bestSellingDishes = $dao->getBestSellingDishes();
   <link rel="stylesheet" href="../CSS/plats.css">
 </head>
 
-<body>
+<body class="parallax">
   
-  <div class="container py-0 ">  
+  <div class="container py-0">  
     <h1 class="text-center mb-4">CATÉGORIES POPULAIRES</h1> <!--parite 6 plats-->
     <div class="row row-cols-1 row-cols-md-3 g-5">
       <?php foreach ($categories as $category) : ?>
         <div class="col">
-          <div class="card h-70">
+          <div class="card">
             <a href="plats.php?category_id=<?= $category['id']; ?>">
               <img src="img/<?= $category['image']; ?>" class="card-img-top" alt="<?= $category['libelle']; ?>">
               <div class="card-img-overlay text-center">
-                <h5 class="card-title"><?= $category['libelle']; ?></h5>
+                <h5 class="card-title" style="position: absolute; bottom: 0; left: 0; width: 100%;"><?= $category['libelle']; ?></h5>
               </div>
             </a>
           </div>
@@ -48,11 +46,11 @@ $bestSellingDishes = $dao->getBestSellingDishes();
     <div class="row row-cols-1 row-cols-md-3 g-5">
       <?php foreach ($bestSellingDishes as $dish) : ?>
         <div class="col">
-        <div class="card">
+        <div class="card plats-card-no-zoom">
            <a href="plats.php">
-              <img src="img/<?= $dish['image']; ?>" class="card-img-top" alt="<?= $dish['libelle']; ?>">
+              <img src="img/<?= $dish['image']; ?>" class="dis-img-top" alt="<?= $dish['libelle']; ?>">
               <div class="card-img-overlay text-center">
-                <h5 class="card-title"><?= $dish['libelle']; ?></h5>
+                <h5 class="card-title" style="position: absolute; bottom: 0; left: 0; width: 100%;"><?= $dish['libelle']; ?></h5>
               </div>
             </a>
           </div>
