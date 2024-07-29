@@ -60,18 +60,27 @@ $bestSellingDishes = $dao->getBestSellingDishes();
     </div>
    <!-- Add a search form -->
  <!-- Add a search form -->
- <form action="plats.php" method="post" class="ongletrecherche">
+ <!-- <form action="plats.php" method="post" class="ongletrecherche">
   <input type="search" name="q" placeholder="Rechercher...">
   <button type="submit">Rechercher</button>
-</form>
+</form> -->
 
 <!--Add a container for search results -->
- <section id="search-results-container">
+ <!-- <section id="search-results-container">
   <h2 class="text-center mb-4"></h2>
   <div id="search-results"> 
     <!-- The search results will be displayed here -->
-  </div>
-</section> 
+  <!-- </div>
+</section>  --> -->
+<!-- this is first two were worked or old -->
+
+ <div class="container mt-3">
+  <form action="" method="GET" class="form-inline justify-content-center">
+    <input type="text" name="search" class="form-control mr-sm-2" 
+    placeholder="Rechercher..." value="<?php echo htmlspecialchars($searchTerm, ENT_QUOTES, 'UTF-8');?>">
+      <button type="submit" class="btn btn-primary">Rechercher</button>
+  </form>
+</div> 
     <!-- Add a container for search results -->
     <!-- <section id="search-results-container">
       <h2 class="text-center mb-4">Résultats de recherche</h2>
@@ -85,7 +94,7 @@ $bestSellingDishes = $dao->getBestSellingDishes();
 
     <?php require_once('../PHP/footer.php') ?>
     
-    <script src="../JAVASCRIPT/searchbar.js"></script>
+    <!-- <script src="../JAVASCRIPT/searchbar.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

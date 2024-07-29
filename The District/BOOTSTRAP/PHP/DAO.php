@@ -27,9 +27,25 @@ class DAO {
      $stmt->execute();
    $results = $stmt->fetchAll();
     return $results;
-    
-    }
+     }
+ /*
+public function getCategoryById($id){
+  $stmt = $this->pdo->prepare('SELECT * FROM categorie WHERE Id = :id');
+  $stmt->execute(['id' => $id]);
+  return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 
+public function getPlatsByCategory($categoryId){
+  $stmt = $this->pdo->prepare('SELECT * FROM plat WHERE id_categorie = :id_categorie);
+  $stmt->execute(['category_id' =>categoryId]);
+  return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+public function getPlatById($id){
+  $stmt = $this->pdo->prepare('SELECT * FROM plat WHERE id =:id');
+  $stmt->execute(['id' => $id]);
+  return $stmt->fetch(PDO::FETCH_ASSOC);
+}*/
 
 
     public function insertCommande($plat_id, $quantite, $total_prix) {
