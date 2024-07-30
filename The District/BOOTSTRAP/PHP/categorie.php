@@ -30,10 +30,10 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
 </head>  -->
 
 <body>
-  <div class="container py-2 plats-container"> <!--plats-container for css zooming cards-->
-  <h1 class="text-center mb-4">CATÉGORIES</h1>
+  <div class="container plats-container"> <!--plats-container for css zooming cards-->
+  <h1 class="text-center my-3">CATÉGORIES</h1>
     <div id="carouselExample" class="carousel slide text-center" data-bs-ride="carousel">
-      <div class="carousel-inner mb-5 mt-4"> <!--mb mean margin bottom and mt mean margin top-->
+      <div class="carousel-inner carousel-no-scroll "> <!--mb mean margin bottom and mt mean margin top-->
 
        <!-- Loop through the number of slides-->
         <?php for ($i = 0; $i < $numSlides; $i++) : ?>
@@ -42,7 +42,7 @@ $numSlides = ceil(count($categories) / $itemsPerSlide);
           <div class="carousel-item <?= $i === 0 ? 'active' : '' ?>">
 
             <!-- Row container for categories, with responsive columns -->
-            <div class="row row-cols-1 row-cols-md-3  gx-5"> <!--gx give space between categories in horizantally-->
+            <div class="row row-cols-1 row-cols-md-3 gx-5"> <!--gx give space between categories in horizantally-->
 
             <!-- Loop through the categories for this slide, using array_slice to get the correct subset-->
               <?php foreach (array_slice($categories, $i * $itemsPerSlide, $itemsPerSlide) as $category) : ?>

@@ -1,9 +1,8 @@
-
-<footer id="foter" class="text-center rounded-pill" style="background-color: #ff8c00; padding: 10px 0; text-align: center;"> 
+<footer id="foter" class="text-center rounded-pill" style="background-color: #ff8c00; padding: 10px 0; text-align: center;">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 p-0">
-        <div class="footer-bottom"> 
+        <div class="footer-bottom">
           <div class="info-links" style="display: flex; justify-content: space-between; align-items: center;">
             <div style="text-align: left;" class="d-none d-md-block">
               <a href="../PHP/Mentions_légales.php">Mentions légales</a>
@@ -28,23 +27,23 @@
             <div style="text-align: right;" class="d-none d-md-block">
               <a href="../PHP/Politique_confidentialité.php">Politique confidentialité</a>
             </div>
-            </div> 
           </div>
-          <div class="container d-flex justify-content-center mx-auto d-block d-md-none">
-              <div class="col-5">
-                <a href="../PHP/Mentions_légales.php">Mentions légales</a>
-              </div>
-              <div class="col-7">
-                <a href="../PHP/Politique_confidentialité.php">Politique confidentialité</a>
-              </div> 
+        </div>
+        <div class="container d-flex justify-content-center mx-auto d-block d-md-none">
+          <div class="col-5">
+            <a href="../PHP/Mentions_légales.php">Mentions légales</a>
+          </div>
+          <div class="col-7">
+            <a href="../PHP/Politique_confidentialité.php">Politique confidentialité</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </footer>
-               
-      
- 
+
+
+
 
 
 

@@ -60,6 +60,7 @@
    border-radius: 50px;
    margin: 0px;
    padding: 5px;
+   
  }
  
  .card-title {
@@ -80,7 +81,6 @@
     height: 350px;
       width: 390px;    
    padding: 0px;
-
  }
 
 
@@ -115,8 +115,7 @@
 
  /*carousel hide the cards and scroll appear during flow, this commande solve this problem*/
  .carousel-inner {
-   overflow: -moz-hidden-unscrollable;
-   /* overflow:visible; */
+ overflow: 0;
  }
 
  /*for plats.php page cards*/
@@ -150,12 +149,12 @@
 
 
  /*zooming for all plats of page plats.php*/
- #imgplat{
+ .plats-card-zoom{
   transition: .6s ease;
 }
 
-#imgplat:hover {
-  transform: scale(1.1);
+.plats-card-zoom:hover {
+  transform: scale(0.98);
 }
 
 .n-hover {
@@ -166,8 +165,6 @@
 .n-hover:hover {
   transform: none;
 } 
-
-
 
 
 
@@ -301,15 +298,16 @@ body#mentions-legales-page {
   flex: 1;
   margin-right: 5px;
   height: 45px;
-  border-radius: 15px;
+  border-radius: 40px;
+  background-color: rgba(255,255,255, .4);
+  color:rgba(255,0,0,0.5) ;
 }
 
 .ongletrecherche button[type="submit"] {
-  background-color: #333; /*#4CAF50*/
-  color: #ffffff;
+  background-color:  rgba(255,255,255, .4); /*transparent color rgba(255,0,0,0.5)*/
+  color: rgba(255,0,0,0.5);
   padding: 5px 10px;
-  border: none;
-  border-radius: 15px;
+  border-radius: 40px;
   cursor: pointer;
   height: 45px;
 }
@@ -321,7 +319,7 @@ body#mentions-legales-page {
   border-radius: 50px;
   transform:translate(-20%, -50%);
   z-index: 1;
-  color: rgb(255, 255, 255);
+  color: rgba(255,0,0,0.5);
   font-weight: bold;
   } 
 
@@ -344,7 +342,7 @@ body#mentions-legales-page {
   }
   
   .plats-container .card:hover {
-    transform: scale(1.1);
+    transform: scale(0.97);
   }
   
   .plats-container .n-hover {

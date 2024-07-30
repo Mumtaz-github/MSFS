@@ -2,16 +2,16 @@
 const searchForm = document.querySelector('.ongletrecherche form');
 const searchInput = document.querySelector('.ongletrecherche input[type="search"]');
 
-if (searchForm && searchInput) {
-  searchForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+if (searchForm && searchInput) {  // Check if both elements are found
+  searchForm.addEventListener('submit', (e) => {   // Add an event listener to the search form
+    e.preventDefault(); // Prevent the default form submission behavior
 
-    const searchQuery = searchInput.value.trim();
-    if (searchQuery) {
-      fetch(`accueil.php?q=${searchQuery}`)
-        .then(response => response.json())
+    const searchQuery = searchInput.value.trim();      // Get the search query from the input field
+if (searchQuery) {    // Check if the search query is not empty
+      fetch(`accueil.php?q=${searchQuery}`) // Make an AJAX request to the accueil.php script with the search query
+        .then(response => response.json())  
         .then(data => {
-          const resultsContainer = document.getElementById('search-results');
+          const resultsContainer = document.getElementById('search-results');     // Get the search results container element
           resultsContainer.innerHTML = '';
           data.forEach(result => {
             const resultHTML = `

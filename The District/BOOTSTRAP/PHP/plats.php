@@ -37,8 +37,8 @@ if (isset($_GET['q'])) {  /*for searchbar of page accueil*/
             <div class="row row-cols-1 row-cols-md-2 g-5">
               <?php foreach (array_slice($dishes, $i * 2, 2) as $dish) : ?> <!--if i take this line in comment and below line sans comment , the plats page show all plats in vertical-->
                 <!-- < ?php foreach ($dishes as $dish):?> -->
-                <div class="col">
-                  <div class="card flex-row plats-card-no-zoom" style="height: 300px;"> <!--plats-card-no-zoom added for css to out from card zooming of this page-->
+                <div class="col-md-6">
+                  <div class="card flex-row plats-card-zoom" style="height: 300px;"> <!--plats-card-no-zoom added for css to out from card zooming of this page-->
                     <a href="plats.php?id=<?= $dish['id']; ?>">
                       <img src="img/<?= $dish['image']; ?>" class="dish-img-top" id="imgplat" alt="<?= $dish['libelle']; ?>">
                     </a>
