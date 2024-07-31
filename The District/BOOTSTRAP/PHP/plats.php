@@ -40,7 +40,7 @@ if (isset($_GET['q'])) {  /*for searchbar of page accueil*/
                 <div class="col-md-6">
                   <div class="card flex-row plats-card-zoom"> <!--plats-card-no-zoom added for css to out from card zooming of this page-->
                     <a href="plats.php?id=<?= $dish['id']; ?>">
-                      <img src="img/<?= $dish['image']; ?>" style="width:10rem; height:15rem" class="dish-img-top" id="imgpla" alt="<?= $dish['libelle']; ?>">
+                      <img src="img/<?= $dish['image']; ?>" style="width:12rem; height:21rem" class="dish-img-top" id="imgpla" alt="<?= $dish['libelle']; ?>">
                     </a>
                     <div class="col-md-8">
                     <div class="card-body">
@@ -58,9 +58,9 @@ if (isset($_GET['q'])) {  /*for searchbar of page accueil*/
         <?php endfor; ?>
       </div>
       <!-- Carousel controls -->
-      <div class="container-fluid mt-2 mb-2">
+      <div class="container-fluid mt-0 mb-0">
         <div class="col">
-          <div class="col d-flex justify-content-evenly">
+          <div class="col d-flex justify-content-between">
             <button class="carousel-control-prev bg-primary d-none" id="carouselcatprec" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             </button>
