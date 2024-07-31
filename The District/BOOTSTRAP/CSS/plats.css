@@ -44,53 +44,70 @@
 }
 
 
+/*page accueil 6 categories*/
+.card-img-top{
+  border-radius: 50px;
+  padding: 7px;
+}
 
+.cards.body{
+padding: 50px;
+margin:-30px ;
+}
 
+ .card{             
+  /* border: 30px; */
+  background-color:#ff8c00;;
+    border-radius: 50px; 
+/*   margin: 10px; */
+} 
+ 
 
+  /*page accueil 3 plats*/
+  .dis-img-top{
+    border-radius: 50px;
+    padding: 7px;
+    height:270px;
 
+  }
+   /*pour plats.php images*/
+  .dish-img-top{
+    border-radius: 50px;
+    padding: 7px;
+    height:270px;
 
-
-
-
+  }
 
  /*  card formating page accueil-*/ /*#34c759*/
- .card {
-   border: 5px;
-   background-color: #ff8c00;
-   border-radius: 50px;
-   margin: 0px;
-   padding: 5px;
-   
- }
- 
+
  .card-title {
    color:white; 
-    font-size: 32px;
+    font-size: 25px;
    font-weight: bolder;
    font-family: Arial, Helvetica, sans-serif;
    text-align: center;
- }  
+ }   */
 
 
 
 
 
 
- .card-img-top {
+ /* .card-img-top {
    border-radius: 45px;
     height: 350px;
       width: 390px;    
    padding: 0px;
- }
+ } */
 
 
- .custom-card {
-   max-width: 70%;
+ /* .custom-card {
+   max-width: 70%; */
    /* set a maximum width for the custom card */
-   margin: auto;
+   /* margin: auto; */
    /* center the custom card horizontally */
-   padding: 20px;
- }
+   /* padding: 20px;
+ } */
 
  /* pour image de accueil animation */
   .card {
@@ -127,25 +144,25 @@
 
 
 /*page accueil 3 plats */
-.dis-img-top {
+/* .dis-img-top {
   border-radius: 45px;
     height: 270px;
      width: 390px;    
   padding: 0px;
 
-}
+} */
 
 
  /*for plats.php page cards*/
- .dish-img-top {
-   width: 200px;
+ /* .dish-img-top {
+   width: 200px; */
    /* or any other size you want */
-   height: 284px;
+   /* height: 284px; */
    /* or any other size you want */
-   object-fit: cover;
+   /* object-fit: cover; */
    /* to maintain the aspect ratio */
-   border-radius: 40px;
- }
+   /* border-radius: 40px;
+ } */
 
 
  /*zooming for all plats of page plats.php*/
@@ -154,7 +171,7 @@
 }
 
 .plats-card-zoom:hover {
-  transform: scale(0.98);
+  transform: scale(0.92);
 }
 
 .n-hover {
@@ -220,17 +237,17 @@
 
 
 /*page categorie images */
- img {
+ /* img {
    border-radius: 80px;
- }
+ } */
 
 
  /*page commande */
- .img-fluid {
+  .img-fluid {
    width: 500px;
    height: 300px;
    border-radius: 30px;
- }
+ } 
 
 
 /*  .info-links {
@@ -324,12 +341,6 @@ body#mentions-legales-page {
   } 
 
 
-
-/*this is plats.php card, i disable zooming the cards in this page*/
-  .plats-card-no-zoom {
-    transform: none !important; /* disable zooming effect */
-    transition: none !important; /* disable transition effect */
-  }
 
 
 
